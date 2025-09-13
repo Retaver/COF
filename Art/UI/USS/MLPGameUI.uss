@@ -1,0 +1,410 @@
+/* Add these styles to your MLPGameUI.uss file */
+
+/* Root container */
+.gamehud-root {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(22, 20, 22);
+    color: rgb(220, 214, 224);
+}
+
+/* Theme and font classes */
+.theme--twilight {
+    background-color: rgb(22, 20, 22);
+    color: rgb(220, 214, 224);
+}
+
+.font--ui {
+    font-size: 14px;
+}
+
+.font--title {
+    font-size: 18px;
+    -unity-font-style: bold;
+}
+
+.font--story {
+    font-size: 16px;
+    -unity-text-align: upper-left;
+}
+
+/* Layout containers */
+.top-row {
+    flex-direction: row;
+    flex-grow: 1;
+    min-height: 400px;
+}
+
+.player-pane {
+    min-width: 300px;
+    max-width: 350px;
+    background-color: rgb(30, 26, 32);
+    border-width: 1px;
+    border-color: rgb(60, 54, 70);
+    border-radius: 8px;
+    padding: 12px;
+    margin-right: 12px;
+}
+
+.center-pane {
+    flex-grow: 1;
+    background-color: rgb(28, 24, 32);
+    border-width: 1px;
+    border-color: rgb(70, 60, 84);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+/* Character info */
+.character-header {
+    flex-direction: row;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.character-portrait {
+    width: 80px;
+    height: 80px;
+    margin-right: 12px;
+    border-radius: 8px;
+    background-color: rgb(46, 40, 54);
+}
+
+.character-info {
+    flex-grow: 1;
+}
+
+.character-name {
+    color: rgb(238, 232, 244);
+    margin-bottom: 4px;
+}
+
+.character-details {
+    color: rgb(186, 176, 200);
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+/* Stats panel */
+.stats-panel {
+    margin-bottom: 12px;
+}
+
+/* Ensure progress bars fill the available width */
+.stat-bar {
+    width: 100%;
+}
+
+.panel-header {
+    -unity-font-style: bold;
+    color: rgb(200, 192, 212);
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+/*
+ * Each stat item contains a label row and a progress bar.  To ensure
+ * the progress bar sits directly under its label rather than next to
+ * it, force the container to stack its children vertically.  Unity 6.2
+ * does not expose the `gap` property on the runtime `IStyle` API, so
+ * use `row-gap` to control spacing between the label row and the bar.
+ */
+.stat-item {
+    margin-bottom: 8px;
+    flex-direction: column;
+    /* Provide vertical spacing between the label row and the bar.  Use
+       row-gap instead of gap to avoid runtime errors on newer Unity
+       versions. */
+    row-gap: 4px;
+    /* Explicitly zero out column gap to avoid unintended horizontal
+       spacing. */
+    column-gap: 0px;
+}
+
+.stat-line {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.stat-name {
+    color: rgb(196, 188, 210);
+    font-size: 12px;
+    -unity-font-style: bold;
+}
+
+.stat-numbers {
+    color: rgb(226, 220, 234);
+    font-size: 12px;
+}
+
+.stat-bar {
+    height: 8px;
+    border-radius: 4px;
+    background-color: rgb(18, 16, 20);
+
+    /* Add spacing above the bar so it sits nicely under the stat-line. */
+    margin-top: 2px;
+}
+
+.health-bar .unity-progress-bar__progress {
+    background-color: rgb(176, 72, 100);
+}
+
+.energy-bar .unity-progress-bar__progress {
+    background-color: rgb(210, 180, 96);
+}
+
+.mana-bar .unity-progress-bar__progress {
+    background-color: rgb(148, 104, 210);
+}
+
+.harmony-bar .unity-progress-bar__progress {
+    background-color: rgb(96, 170, 180);
+}
+
+.discord-bar .unity-progress-bar__progress {
+    background-color: rgb(170, 90, 220);
+}
+
+/* Attributes panel */
+.attributes-panel {
+    background-color: rgb(38, 34, 44);
+    border-width: 1px;
+    border-color: rgb(70, 60, 84);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.card-section {
+    background-color: rgb(38, 34, 44);
+}
+
+.attr-grid {
+    flex-direction: column;
+}
+
+.attr-row {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.attr-item {
+    flex-direction: row;
+    align-items: center;
+    min-width: 48%;
+}
+
+.attr-label {
+    color: rgb(188, 180, 204);
+    font-size: 12px;
+    -unity-font-style: bold;
+    margin-right: 8px;
+}
+
+.attr-value {
+    color: rgb(232, 226, 240);
+    font-size: 12px;
+    -unity-text-align: middle-center;
+    min-width: 20px;
+}
+
+/* Narrative scroll */
+.narrative-scroll {
+    flex-grow: 1;
+    background-color: transparent;
+}
+
+.story-title {
+    color: rgb(238, 232, 244);
+    margin-bottom: 12px;
+    -unity-text-align: upper-center;
+}
+
+.story-image {
+    min-height: 200px;
+    background-color: rgb(46, 40, 54);
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.story-text {
+    color: rgb(230, 224, 236);
+    white-space: normal;
+    -unity-text-align: upper-left;
+}
+
+/* Choices panel */
+.choices-panel {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(38, 34, 44);
+    border-width: 1px;
+    border-color: rgb(70, 60, 84);
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.choice-btn {
+    background-color: rgb(44, 40, 52);
+    border-width: 1px;
+    border-color: rgb(82, 72, 96);
+    border-radius: 6px;
+    color: rgb(220, 214, 224);
+    margin: 4px;
+    min-width: 80px;
+    min-height: 32px;
+}
+
+.choice-btn:hover {
+    background-color: rgb(54, 50, 64);
+    border-color: rgb(108, 96, 124);
+    color: rgb(242, 238, 248);
+}
+
+/* Bottom navigation */
+.bottom-nav {
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(38, 34, 44);
+    border-width: 1px;
+    border-color: rgb(70, 60, 84);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.nav-btn {
+    background-color: rgb(44, 40, 52);
+    border-width: 1px;
+    border-color: rgb(82, 72, 96);
+    border-radius: 6px;
+    color: rgb(220, 214, 224);
+    margin: 4px;
+    min-width: 100px;
+    min-height: 36px;
+}
+
+.nav-btn:hover {
+    background-color: rgb(54, 50, 64);
+    border-color: rgb(108, 96, 124);
+    color: rgb(242, 238, 248);
+}
+
+/* ------------------------------------------------------------------ */
+/* Map panel styles
+ *
+ * The map panel lives in the player pane and replaces the old attributes
+ * panel.  It displays a simple grid of tiles along with a title and
+ * description.  These styles are adapted from MapUI.uss so that the
+ * integrated map matches the overall game aesthetic.  See the
+ * MapController script for the runtime behaviour.
+ */
+
+/* Root of the map panel */
+.map-root {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    flex-grow: 1;
+    /* Semi‑transparent background distinguishes the map from other panels */
+    background-color: rgba(32, 28, 40, 0.8);
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: rgb(70, 60, 84);
+    border-style: solid;
+    margin-top: 12px;
+}
+
+/* Map title */
+.map-title {
+    font-size: 16px;
+    -unity-font-style: bold;
+    color: rgb(226, 220, 234);
+    margin-bottom: 6px;
+}
+
+/* Container that holds rows of tiles */
+.map-grid {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Reserve some space for the grid within the panel */
+    flex-grow: 1;
+    margin-bottom: 6px;
+}
+
+/* A row of tiles */
+.map-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Individual tile */
+.map-tile {
+    width: 36px;
+    height: 36px;
+    margin: 2px;
+    border-radius: 4px;
+    background-color: rgb(36, 30, 46);
+    border-color: rgb(82, 72, 96);
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(220, 214, 224);
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+/* Highlight the active tile (current location) */
+.map-tile.active {
+    background-color: rgb(108, 96, 124);
+    color: rgb(242, 238, 248);
+}
+
+/* Invalid/unoccupied tiles */
+.map-tile.invalid {
+    background-color: rgb(52, 46, 62);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Hovered tile preview styling.  When the mouse hovers over a valid map
+   tile, it gains this class via MapController.  The colour shift and
+   border highlight give immediate feedback without committing to a move. */
+.map-tile.hover {
+    background-color: rgb(72, 64, 88);
+    border-color: rgb(132, 120, 164);
+    color: rgb(238, 232, 248);
+}
+
+/* Description below the map */
+.map-description {
+    margin-top: 4px;
+    color: rgb(210, 202, 220);
+    font-size: 12px;
+    text-align: center;
+    max-width: 280px;
+    white-space: normal;
+}
+
+.nav-btn--character,
+.nav-btn--inventory,
+.nav-btn--settings {
+    /* Add specific styling for different nav buttons if needed */
+}
+
+/* Map button inherits from nav-btn.  Define a separate class in case
+ * additional styling is desired in the future.  Currently it uses the
+ * same defaults as the other navigation buttons. */
+.nav-btn--map {
+    /* intentionally left blank */
+}

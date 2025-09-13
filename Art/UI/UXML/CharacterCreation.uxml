@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+  <ui:Style src="project://database/Assets/Project/Art/UI/USS/CharacterCreation.uss" />
+  <!-- Import portrait style overrides to preserve aspect ratio -->
+  <ui:Style src="project://database/Assets/Project/Art/UI/USS/Portraits.uss" />
+
+  <!-- Additional fixes for Unity 6.x text fields -->
+  <!-- Use project://database prefix so Unity can resolve the style at runtime -->
+  <ui:Style src="project://database/Assets/Project/Art/UI/USS/CharacterCreationFix.uss" />
+
+  <ui:VisualElement name="Root" class="cc-screen">
+
+    <ui:VisualElement class="cc-header">
+      <ui:Label class="cc-title" text="Character Creation" />
+      <ui:Label class="cc-sub" text="Compact layout / Single stylesheet" />
+    </ui:VisualElement>
+
+    <ui:VisualElement class="cc-grid">
+      <ui:VisualElement class="cc-left cc-col cc-gap-md">
+
+        <ui:VisualElement class="cc-card cc-col cc-gap-sm">
+          <ui:Label class="cc-card-title" text="Portrait" />
+          <ui:VisualElement name="Portrait" class="cc-portrait" />
+          <ui:VisualElement class="cc-field-row">
+            <ui:Label class="cc-label" text="Stance" />
+            <ui:TextField name="StanceField" class="cc-input" isReadOnly="true" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement class="cc-card cc-col cc-gap-sm">
+          <ui:Label class="cc-card-title" text="Gender" />
+          <ui:VisualElement class="pill-row">
+            <ui:Button name="FemaleButton" class="pill pill--gender" text="Female" />
+            <ui:Button name="MaleButton"   class="pill pill--gender" text="Male" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+      </ui:VisualElement>
+
+      <ui:VisualElement class="cc-right cc-col cc-gap-md">
+
+        <ui:VisualElement class="cc-card cc-col cc-gap-sm">
+          <ui:Label class="cc-card-title" text="Basics" />
+          <ui:VisualElement class="cc-field-row">
+            <ui:Label class="cc-label" text="Name" />
+            <ui:TextField name="NameField" class="cc-input" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement class="cc-card cc-col cc-gap-sm">
+          <ui:Label class="cc-card-title" text="Body Build" />
+          <ui:VisualElement class="pill-row pill-wrap">
+            <ui:Button name="BuildLithe"    class="pill pill--build" text="Slender" />
+            <ui:Button name="BuildAverage"  class="pill pill--build" text="Average" />
+            <ui:Button name="BuildSturdy"   class="pill pill--build" text="Sturdy" />
+            <ui:Button name="BuildMuscular" class="pill pill--build" text="Muscular" />
+            <ui:Button name="BuildPlush"    class="pill pill--build" text="Plush" />
+          </ui:VisualElement>
+          <ui:Label name="BuildDescLabel" class="cc-help" text="Average: balanced build, no tradeoffs." />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="cc-card cc-col cc-gap-sm">
+          <ui:Label class="cc-card-title" text="Race" />
+          <ui:VisualElement name="RacePills" class="pill-row pill-wrap">
+            <ui:Button name="Race_EarthPony"  class="pill pill--race" text="Earth Pony" />
+            <ui:Button name="Race_Pegasus"    class="pill pill--race" text="Pegasus" />
+            <ui:Button name="Race_Unicorn"    class="pill pill--race" text="Unicorn" />
+            <ui:Button name="Race_BatPony"    class="pill pill--race" text="Bat Pony" />
+            <ui:Button name="Race_Changeling" class="pill pill--race" text="Changeling" />
+            <ui:Button name="Race_Griffon"    class="pill pill--race" text="Griffon" />
+            <ui:Button name="Race_Dragon"     class="pill pill--race" text="Dragon" />
+            <ui:Button name="Race_Human"      class="pill pill--race" text="Human" />
+          </ui:VisualElement>
+          <ui:Label name="RaceHelp" class="cc-help" text="Adaptable wanderers from afar." />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="cc-card cc-col cc-gap-sm">
+          <ui:Label class="cc-card-title" text="Background" />
+          <ui:VisualElement name="BgPills" class="pill-row pill-wrap">
+            <ui:Button name="Bg_Drifter"  class="pill pill--bg" text="Drifter" />
+            <ui:Button name="Bg_Farmhand" class="pill pill--bg" text="Farmhand" />
+            <ui:Button name="Bg_Scholar"  class="pill pill--bg" text="Scholar" />
+            <ui:Button name="Bg_Guard"    class="pill pill--bg" text="Guard" />
+            <ui:Button name="Bg_Artisan"  class="pill pill--bg" text="Artisan" />
+            <ui:Button name="Bg_Outcast"  class="pill pill--bg" text="Outcast" />
+          </ui:VisualElement>
+          <ui:Label name="BgHelp" class="cc-help" text="You&apos;ve seen a bit of everything and trust your gut." />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="cc-card stats-card cc-col cc-gap-sm">
+          <ui:Label name="PointsTitle" class="stats-title" text="Attribute points remaining: 10" />
+
+          <ui:VisualElement class="stat-row">
+            <ui:VisualElement class="stat-line">
+              <ui:Label class="stat-name" text="Strength" />
+              <ui:VisualElement class="stat-controls">
+                <ui:Button name="StrMinus" class="stat-btn" text="-" />
+                <ui:Label  name="StrValue" class="stat-val" text="5" />
+                <ui:Button name="StrPlus"  class="stat-btn" text="+" />
+              </ui:VisualElement>
+            </ui:VisualElement>
+          </ui:VisualElement>
+
+          <ui:VisualElement class="stat-row">
+            <ui:VisualElement class="stat-line">
+              <ui:Label class="stat-name" text="Dexterity" />
+              <ui:VisualElement class="stat-controls">
+                <ui:Button name="DexMinus" class="stat-btn" text="-" />
+                <ui:Label  name="DexValue" class="stat-val" text="5" />
+                <ui:Button name="DexPlus"  class="stat-btn" text="+" />
+              </ui:VisualElement>
+            </ui:VisualElement>
+          </ui:VisualElement>
+
+          <ui:VisualElement class="stat-row">
+            <ui:VisualElement class="stat-line">
+              <ui:Label class="stat-name" text="Constitution" />
+              <ui:VisualElement class="stat-controls">
+                <ui:Button name="ConMinus" class="stat-btn" text="-" />
+                <ui:Label  name="ConValue" class="stat-val" text="5" />
+                <ui:Button name="ConPlus"  class="stat-btn" text="+" />
+              </ui:VisualElement>
+            </ui:VisualElement>
+          </ui:VisualElement>
+
+          <ui:VisualElement class="stat-row">
+            <ui:VisualElement class="stat-line">
+              <ui:Label class="stat-name" text="Intelligence" />
+              <ui:VisualElement class="stat-controls">
+                <ui:Button name="IntMinus" class="stat-btn" text="-" />
+                <ui:Label  name="IntValue" class="stat-val" text="5" />
+                <ui:Button name="IntPlus"  class="stat-btn" text="+" />
+              </ui:VisualElement>
+            </ui:VisualElement>
+          </ui:VisualElement>
+
+          <ui:VisualElement class="stat-row">
+            <ui:VisualElement class="stat-line">
+              <ui:Label class="stat-name" text="Wisdom" />
+              <ui:VisualElement class="stat-controls">
+                <ui:Button name="WisMinus" class="stat-btn" text="-" />
+                <ui:Label  name="WisValue" class="stat-val" text="5" />
+                <ui:Button name="WisPlus"  class="stat-btn" text="+" />
+              </ui:VisualElement>
+            </ui:VisualElement>
+          </ui:VisualElement>
+
+          <ui:VisualElement class="stat-row">
+            <ui:VisualElement class="stat-line">
+              <ui:Label class="stat-name" text="Charisma" />
+              <ui:VisualElement class="stat-controls">
+                <ui:Button name="ChaMinus" class="stat-btn" text="-" />
+                <ui:Label  name="ChaValue" class="stat-val" text="5" />
+                <ui:Button name="ChaPlus"  class="stat-btn" text="+" />
+              </ui:VisualElement>
+            </ui:VisualElement>
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement class="cc-footer">
+          <ui:Button name="BackButton"   class="cc-nav"         text="Back" />
+          <ui:Button name="FinishButton" class="cc-nav primary" text="Finish" />
+        </ui:VisualElement>
+
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+  </ui:VisualElement>
+</ui:UXML>

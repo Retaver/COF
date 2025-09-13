@@ -1,0 +1,434 @@
+/* Container */
+.combat-container {
+    background-color: rgb(28, 24, 32);
+    padding: 20px;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.combat-header {
+    background-color: rgb(38, 34, 44);
+    border-width: 2px;
+    border-color: rgb(70, 60, 84);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 12px;
+}
+
+.combat-title {
+    font-size: 20px;
+    color: rgb(210, 180, 96);
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+}
+
+/* Main columns */
+.combat-main { 
+    flex-direction: row; 
+    flex-grow: 1; 
+    margin-bottom: 10px; 
+}
+
+.combat-left-panel { 
+    width: 300px; 
+    flex-shrink: 0; 
+    flex-direction: column; 
+    margin-right: 12px; 
+}
+
+.combat-center-panel { 
+    flex-grow: 1; 
+    flex-direction: column; 
+    margin-right: 12px; 
+}
+
+.combat-right-panel { 
+    width: 300px; 
+    flex-shrink: 0; 
+    flex-direction: column; 
+}
+
+/* Cards */
+.character-card {
+    background-color: rgb(38, 34, 44);
+    border-width: 2px;
+    border-color: rgb(70, 60, 84);
+    border-radius: 8px;
+    padding: 12px;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.character-card.player { 
+    border-left-width: 4px; 
+    border-left-color: rgb(96, 170, 180); 
+}
+
+.character-card.enemy { 
+    border-right-width: 4px; 
+    border-right-color: rgb(176, 72, 100); 
+}
+
+.character-name { 
+    font-size: 18px; 
+    -unity-font-style: bold; 
+    color: rgb(238, 232, 244); 
+    margin-bottom: 8px; 
+    -unity-text-align: middle-center; 
+}
+
+.character-portrait { 
+    width: 84px; 
+    height: 84px; 
+    background-color: rgb(46, 40, 54); 
+    border-radius: 8px; 
+    border-width: 2px; 
+    border-color: rgb(86, 74, 98); 
+    margin-bottom: 8px; 
+    -unity-background-scale-mode: scale-to-fit; 
+}
+
+.character-portrait.player { 
+    border-color: rgb(96, 170, 180); 
+}
+
+.character-portrait.enemy { 
+    border-color: rgb(176, 72, 100); 
+}
+
+.character-info { 
+    font-size: 12px; 
+    color: rgb(186, 176, 200); 
+    margin-bottom: 8px; 
+    -unity-text-align: middle-center; 
+    -unity-font-style: italic; 
+}
+
+/* Stats */
+.stats-container { 
+    flex-direction: column; 
+    margin-top: 6px; 
+    width: 100%; 
+}
+
+.stat-group { 
+    margin-bottom: 8px; 
+    width: 100%; 
+}
+
+.stat-label { 
+    font-size: 11px; 
+    color: rgb(186, 176, 200); 
+    margin-bottom: 3px; 
+    -unity-font-style: bold; 
+}
+
+.stat-bar-container {
+    background-color: rgb(18, 16, 20);
+    border-width: 1px;
+    border-color: rgb(56, 48, 64);
+    border-radius: 4px;
+    height: 18px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.stat-bar-fill { 
+    height: 100%; 
+    border-radius: 2px; 
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+}
+
+.stat-bar-text { 
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+    font-size: 10px; 
+    color: rgb(255,255,255); 
+    -unity-text-align: middle-center; 
+    -unity-font-style: bold; 
+}
+
+.health-fill { 
+    background-color: rgb(176, 72, 100); 
+}
+
+.energy-fill { 
+    background-color: rgb(210, 180, 96); 
+}
+
+.mana-fill { 
+    background-color: rgb(148, 104, 210); 
+}
+
+/* Scene + Log */
+.scene-description { 
+    background-color: rgb(38, 34, 44); 
+    border-width: 2px; 
+    border-color: rgb(70, 60, 84); 
+    border-radius: 8px; 
+    padding: 12px; 
+    margin-bottom: 10px; 
+}
+
+.scene-title { 
+    font-size: 14px; 
+    color: rgb(210,180,96); 
+    -unity-font-style: bold; 
+    margin-bottom: 6px; 
+    -unity-text-align: middle-center; 
+}
+
+.scene-text { 
+    font-size: 12px; 
+    color: rgb(186,176,200); 
+    -unity-text-align: middle-center; 
+    white-space: normal; 
+}
+
+.combat-log { 
+    background-color: rgb(38, 34, 44); 
+    border-width: 2px; 
+    border-color: rgb(70, 60, 84); 
+    border-radius: 8px; 
+    padding: 10px; 
+    flex-grow: 1; 
+    min-height: 200px; 
+}
+
+.combat-log-header { 
+    flex-direction: row; 
+    justify-content: center; 
+    margin-bottom: 6px; 
+}
+
+.combat-log-title { 
+    font-size: 12px; 
+    color: rgb(210,180,96); 
+    -unity-font-style: bold; 
+}
+
+.combat-log-scroll { 
+    flex-grow: 1; 
+    background-color: rgb(18, 16, 20); 
+    border-width: 1px; 
+    border-color: rgb(56,48,64); 
+    border-radius: 10px; 
+    padding: 12px; 
+}
+
+/* Bubble log entries */
+.bubble-line {
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.bubble {
+    max-width: 900px;
+    width: auto;
+    background-color: rgba(44, 40, 52, 0.95);
+    border-radius: 12px;
+    border-width: 1px;
+    border-color: rgb(82, 72, 96);
+    padding: 10px 14px;
+    align-self: center;
+}
+
+.bubble-text {
+    font-size: 13px;
+    color: rgb(236, 232, 244);
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+/* Bubble variants */
+.bubble--title {
+    background-color: rgb(54, 50, 64);
+    border-color: rgb(120, 108, 136);
+}
+
+.bubble--narration { }
+
+.bubble--system {
+    background-color: rgb(42, 38, 48);
+    color: rgb(210,180,96);
+}
+
+.bubble--player {
+    border-left-width: 4px;
+    border-left-color: rgb(96, 170, 180);
+}
+
+.bubble--enemy {
+    border-left-width: 4px;
+    border-left-color: rgb(176, 72, 100);
+}
+
+.bubble--hint {
+    background-color: rgb(40, 44, 50);
+    border-color: rgb(80, 100, 140);
+}
+
+/* Actions area */
+.combat-actions-panel {
+    background-color: rgb(38, 34, 44);
+    border-width: 2px;
+    border-color: rgb(70, 60, 84);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    flex-direction: row;
+    min-height: 140px;
+}
+
+.bottom-action-category { 
+    flex-grow: 1; 
+    flex-direction: column; 
+    margin-right: 10px; 
+    background-color: rgb(32, 28, 36); 
+    border-width: 1px; 
+    border-color: rgb(60, 52, 68); 
+    border-radius: 6px; 
+    padding: 8px; 
+}
+
+.bottom-action-category:last-child { 
+    margin-right: 0; 
+}
+
+.bottom-category-title {
+    font-size: 12px;
+    -unity-font-style: bold;
+    color: rgb(210, 180, 96);
+    margin-bottom: 6px;
+    -unity-text-align: middle-center;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(70, 60, 84);
+    padding-bottom: 3px;
+}
+
+/* Button grid */
+.bottom-action-list { 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+}
+
+.bottom-action-list > * {
+    margin: 3px;
+}
+
+/* Buttons */
+.simple-action-button {
+    height: 30px;
+    min-width: 110px;
+    padding: 4px 10px;
+    background-color: rgb(44, 40, 52);
+    border-width: 1px;
+    border-color: rgb(82, 72, 96);
+    border-radius: 6px;
+    color: rgb(230, 226, 236);
+    font-size: 12px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+}
+
+.simple-action-button:hover { 
+    background-color: rgb(54, 50, 64); 
+    border-color: rgb(120, 108, 136); 
+    color: rgb(248, 246, 252); 
+}
+
+.simple-action-button:active { 
+    background-color: rgb(64, 58, 76); 
+}
+
+.simple-action-button:disabled { 
+    opacity: 0.45; 
+    color: rgb(160,156,170); 
+}
+
+.attack-button { 
+    border-left-width: 3px; 
+    border-left-color: rgb(176, 72, 100); 
+}
+
+.magic-button { 
+    border-left-width: 3px; 
+    border-left-color: rgb(148, 104, 210); 
+}
+
+.act-button { 
+    border-left-width: 3px; 
+    border-left-color: rgb(96, 170, 180); 
+}
+
+/* Bottom bar */
+.combat-bottom-panel {
+    background-color: rgb(38, 34, 44);
+    border-width: 2px;
+    border-color: rgb(70, 60, 84);
+    border-radius: 8px;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quick-action-group { 
+    flex-direction: row; 
+}
+
+.quick-action-group > * {
+    margin: 3px;
+}
+
+.quick-button {
+    background-color: rgb(44, 40, 52);
+    border-width: 1px;
+    border-color: rgb(82, 72, 96);
+    border-radius: 6px;
+    color: rgb(230, 226, 236);
+    font-size: 12px;
+    padding: 6px 12px;
+    min-width: 72px;
+}
+
+.quick-button:hover { 
+    background-color: rgb(54,50,64); 
+    border-color: rgb(108,96,124); 
+}
+
+.turn-indicator { 
+    font-size: 16px; 
+    -unity-font-style: bold; 
+    -unity-text-align: middle-center; 
+}
+
+.turn-indicator.player-turn { 
+    color: rgb(96,170,180); 
+}
+
+.turn-indicator.enemy-turn { 
+    color: rgb(176,72,100); 
+}
+
+.round-counter { 
+    font-size: 12px; 
+    color: rgb(186,176,200); 
+}
+
+/* FX layer */
+.fx-layer { 
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+}

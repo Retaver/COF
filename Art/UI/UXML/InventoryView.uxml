@@ -1,0 +1,33 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="Assets/Project/Art/UI/USS/InventoryView.uss" />
+    <ui:VisualElement name="InventoryRoot" class="inventory theme--twilight font--ui">
+        <ui:VisualElement class="inventory__toolbar">
+            <ui:VisualElement class="inventory__tabs">
+                <ui:Button name="TabAll" text="All" class="inv-tab is-selected" />
+                <ui:Button name="TabWeapons" text="Weapons" class="inv-tab" />
+                <ui:Button name="TabArmor" text="Armor" class="inv-tab" />
+                <ui:Button name="TabConsumables" text="Consumables" class="inv-tab" />
+            </ui:VisualElement>
+            <ui:VisualElement class="inventory__tools">
+                <ui:TextField name="SearchField" picking-mode="Ignore" value="Search..." class="inv-search" />
+                <ui:DropdownField name="SortDropdown" class="inv-sort" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="inventory__content">
+            <ui:VisualElement class="inventory__left">
+                <ui:ListView name="ItemList" reorderable="false" show-foldout-header="false" show-bound-collection-size="false" selection-type="Single" class="inv-list" />
+            </ui:VisualElement>
+            <ui:VisualElement class="inventory__right">
+                <ui:VisualElement class="inv-compare">
+                    <ui:Label name="CompareTitle" text="Compare" class="inv-compare__title" />
+                    <ui:VisualElement name="CompareBody" class="inv-compare__body" />
+                </ui:VisualElement>
+                <ui:VisualElement class="inventory__actions">
+                    <ui:Button name="DropXButton" text="Drop X" class="inv-action" />
+                    <ui:Button name="SellJunkButton" text="Sell All Junk" class="inv-action" />
+                    <ui:Button name="UseMultipleButton" text="Use Multiple" class="inv-action inv-action--primary" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

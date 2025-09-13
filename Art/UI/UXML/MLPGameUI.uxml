@@ -1,0 +1,88 @@
+﻿<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Project/Art/UI/USS/MLPGameUI.uss" />
+    <!-- Import portrait style overrides to ensure portraits maintain aspect ratio -->
+    <Style src="project://database/Assets/Project/Art/UI/USS/Portraits.uss" />
+    <ui:VisualElement name="Root" class="gamehud-root theme--twilight font--ui">
+        <ui:VisualElement class="top-row">
+            <ui:VisualElement class="player-pane">
+                <ui:VisualElement class="character-header">
+                    <ui:Image name="CharacterPortrait" class="character-portrait" />
+                    <ui:VisualElement class="character-info">
+                        <ui:Label name="CharacterName" text="Amber Trail" class="character-name font--title" />
+                        <ui:Label name="RaceLabel" text="Race: EarthPony" class="character-details" />
+                        <ui:Label name="LevelLabel" text="Level 1" class="character-details" />
+                        <ui:Label name="BitsValue" text="250" class="character-details" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement class="stats-panel">
+                    <ui:Label text="CONDITION" class="panel-header" />
+                    <ui:VisualElement class="stat-item">
+                        <ui:VisualElement class="stat-line">
+                            <ui:Label text="HEALTH" class="stat-name" />
+                            <ui:Label name="HealthValue" text="100/100" class="stat-numbers" />
+                        </ui:VisualElement>
+                        <ui:ProgressBar name="HealthBar" value="100" high-value="100" class="stat-bar health-bar" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="stat-item">
+                        <ui:VisualElement class="stat-line">
+                            <ui:Label text="ENERGY" class="stat-name" />
+                            <ui:Label name="StaminaValue" text="100/100" class="stat-numbers" />
+                        </ui:VisualElement>
+                        <ui:ProgressBar name="StaminaBar" value="100" high-value="100" class="stat-bar energy-bar" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="stat-item">
+                        <ui:VisualElement class="stat-line">
+                            <ui:Label text="MANA" class="stat-name" />
+                            <ui:Label name="ManaValue" text="50/50" class="stat-numbers" />
+                        </ui:VisualElement>
+                        <ui:ProgressBar name="ManaBar" value="50" high-value="50" class="stat-bar mana-bar" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="stat-item">
+                        <ui:VisualElement class="stat-line">
+                            <ui:Label text="HARMONY" class="stat-name" />
+                            <ui:Label name="HarmonyValue" text="0/100" class="stat-numbers" />
+                        </ui:VisualElement>
+                        <ui:ProgressBar name="HarmonyBar" value="0" high-value="100" class="stat-bar harmony-bar" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="stat-item">
+                        <ui:VisualElement class="stat-line">
+                            <ui:Label text="DISCORD" class="stat-name" />
+                            <ui:Label name="DiscordValue" text="0/100" class="stat-numbers" />
+                        </ui:VisualElement>
+                        <ui:ProgressBar name="DiscordBar" value="0" high-value="100" class="stat-bar discord-bar" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <!-- Replace the old attributes panel with an interactive map panel.
+                     The MapRoot contains a title, a grid for tiles and a description area.
+                     It will be populated at runtime by the MapController script. -->
+                <ui:VisualElement name="MapRoot" class="map-root">
+                    <ui:Label name="MapTitle" text="Map" class="map-title" />
+                    <ui:VisualElement name="MapGrid" class="map-grid" />
+                    <ui:Label name="MapDescription" text="" class="map-description" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="center-pane">
+                <ui:ScrollView name="NarrativeScroll" class="narrative-scroll">
+                    <ui:Label name="StoryTitle" text="Chapter 1: A New Beginning" class="story-title font--title" />
+                    <!-- StoryBody will be populated via RichStoryRenderer to support inline images and formatted text -->
+                    <ui:VisualElement name="StoryBody" class="story-body" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ChoicesPanel" class="choices-panel">
+            <ui:Button name="Choice1" text="[1]" class="choice-btn font--ui" />
+            <ui:Button name="Choice2" text="[2]" class="choice-btn font--ui" />
+            <ui:Button name="Choice3" text="[3]" class="choice-btn font--ui" />
+            <ui:Button name="Choice4" text="[4]" class="choice-btn font--ui" />
+            <ui:Button name="Choice5" text="[5]" class="choice-btn font--ui" />
+            <ui:Button name="Choice6" text="[6]" class="choice-btn font--ui" />
+            <ui:Button name="Choice7" text="[7]" class="choice-btn font--ui" />
+            <ui:Button name="Choice8" text="[8]" class="choice-btn font--ui" />
+        </ui:VisualElement>
+        <ui:VisualElement name="BottomNav" class="bottom-nav">
+            <ui:Button name="CharacterButton" text="Character" class="nav-btn nav-btn--character" />
+            <ui:Button name="InventoryButton" text="Items" class="nav-btn nav-btn--inventory" />
+            <ui:Button name="MenuButton" text="Menu" class="nav-btn nav-btn--settings" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

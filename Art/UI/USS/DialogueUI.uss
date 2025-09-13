@@ -1,0 +1,337 @@
+
+/* Optional font helpers (drop fonts in Assets/Resources/Fonts/) */
+.font--title { -unity-font: resource("Fonts/MLPTitle"); }
+.font--story { -unity-font: resource("Fonts/StoryText"); }
+.font--ui    { -unity-font: resource("Fonts/UIFont"); }
+
+/* Root container */
+.dialogue-container {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    background-color: rgba(20, 10, 30, 0.85);
+    color: rgb(245, 230, 255);
+    border-top-width: 2px;
+    border-top-color: rgb(122, 64, 161);
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(122, 64, 161);
+}
+
+/* Portraits row */
+.dialogue-portraits {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.portrait-container {
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    padding: 4px;
+    background-color: rgba(40, 20, 60, 0.5);
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: rgb(89, 63, 122);
+}
+
+.player-portrait,
+.npc-portrait {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(60, 30, 80, 0.7);
+    border-radius: 6px;
+    margin-bottom: 4px;
+    border-width: 1px;
+    border-color: rgb(139, 79, 199);
+}
+
+.character-name {
+    font-size: 14px;
+    -unity-font-style: bold;
+    color: rgb(226, 179, 255);
+    -unity-text-align: middle-center;
+}
+
+/* Dialogue text area */
+.dialogue-text-container {
+    flex-grow: 1;
+    margin-bottom: 10px;
+    background-color: rgba(30, 15, 45, 0.8);
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: rgb(122, 64, 161);
+    padding: 8px;
+}
+
+.dialogue-scroll {
+    flex-grow: 1;
+    padding: 6px;
+}
+
+.dialogue-text {
+    font-size: 16px;
+    color: rgb(245, 230, 255);
+    white-space: normal;
+}
+
+/* Responses */
+.response-container {
+    flex-direction: column;
+    margin-bottom: 10px;
+    background-color: rgba(35, 20, 55, 0.7);
+    border-width: 1px;
+    border-color: rgb(89, 63, 122);
+    border-radius: 6px;
+}
+
+.response-scroll {
+    max-height: 160px;
+}
+
+.response-options {
+    flex-direction: column;
+    padding: 6px;
+}
+
+.response-options > * {
+    margin-bottom: 6px;
+}
+
+/* Dynamically created response buttons */
+.response-options Button {
+    background-color: rgba(70, 30, 110, 0.85);
+    border-width: 1px;
+    border-color: rgb(139, 79, 199);
+    border-radius: 6px;
+    color: rgb(245, 230, 255);
+    font-size: 14px;
+    padding: 4px 8px;
+    white-space: normal;
+}
+
+.response-options Button:hover {
+    background-color: rgba(120, 60, 160, 1);
+    border-color: rgb(194, 133, 255);
+}
+
+/* Controls */
+.dialogue-controls {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 6px;
+    border-top-width: 1px;
+    border-top-color: rgb(89, 63, 122);
+}
+
+/* Buttons */
+.dialogue-button {
+    width: 100px;
+    height: 34px;
+    background-color: rgba(50, 25, 70, 0.85);
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: rgb(122, 64, 161);
+    font-size: 14px;
+    color: rgb(245, 230, 255);
+}
+
+.dialogue-button:hover {
+    background-color: rgba(110, 55, 150, 0.9);
+    border-color: rgb(194, 133, 255);
+    color: rgb(255, 255, 255);
+}
+
+.dialogue-button.primary {
+    background-color: rgba(140, 60, 190, 0.95);
+    border-color: rgb(214, 156, 255);
+    -unity-font-style: bold;
+}
+
+.dialogue-button.primary:hover {
+    background-color: rgba(170, 90, 220, 1);
+    border-color: rgb(255, 255, 255);
+}
+
+/* Text speed controls (optional area you may add) */
+.text-speed-controls {
+    flex-direction: row;
+    align-items: center;
+}
+
+.text-speed-controls > * {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.speed-label {
+    font-size: 12px;
+    color: rgb(203, 168, 255);
+}
+
+.speed-slider {
+    flex-grow: 1;
+    height: 12px;
+}
+
+/* TWILIGHT THEME */
+.theme--twilight .dialogue-container {
+    background-color: rgba(20, 10, 30, 0.85);
+    color: rgb(245, 230, 255);
+    border-top-color: rgb(122, 64, 161);
+    border-bottom-color: rgb(122, 64, 161);
+}
+
+.theme--twilight .portrait-container {
+    background-color: rgba(40, 20, 60, 0.5);
+    border-color: rgb(89, 63, 122);
+}
+
+.theme--twilight .player-portrait,
+.theme--twilight .npc-portrait {
+    background-color: rgba(60, 30, 80, 0.7);
+    border-color: rgb(139, 79, 199);
+}
+
+.theme--twilight .character-name { 
+    color: rgb(226, 179, 255); 
+}
+
+.theme--twilight .dialogue-text-container {
+    background-color: rgba(30, 15, 45, 0.8);
+    border-color: rgb(122, 64, 161);
+}
+
+.theme--twilight .dialogue-text {
+    color: rgb(245, 230, 255);
+}
+
+.theme--twilight .response-container {
+    background-color: rgba(35, 20, 55, 0.7);
+    border-color: rgb(89, 63, 122);
+}
+
+.theme--twilight .response-options Button {
+    background-color: rgba(70, 30, 110, 0.85);
+    border-color: rgb(139, 79, 199);
+    color: rgb(245, 230, 255);
+}
+
+.theme--twilight .response-options Button:hover {
+    background-color: rgba(120, 60, 160, 1);
+    border-color: rgb(194, 133, 255);
+    color: rgb(255, 255, 255);
+}
+
+.theme--twilight .dialogue-controls {
+    border-top-color: rgb(89, 63, 122);
+}
+
+.theme--twilight .dialogue-button {
+    background-color: rgba(50, 25, 70, 0.85);
+    border-color: rgb(122, 64, 161);
+    color: rgb(245, 230, 255);
+}
+
+.theme--twilight .dialogue-button:hover {
+    background-color: rgba(110, 55, 150, 0.9);
+    border-color: rgb(194, 133, 255);
+    color: rgb(255, 255, 255);
+}
+
+.theme--twilight .dialogue-button.primary {
+    background-color: rgba(140, 60, 190, 0.95);
+    border-color: rgb(214, 156, 255);
+}
+
+.theme--twilight .dialogue-button.primary:hover {
+    background-color: rgba(170, 90, 220, 1);
+    border-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.theme--twilight .speed-label {
+    color: rgb(203, 168, 255);
+}
+
+/* AURIC THEME */
+.theme--auric .dialogue-container {
+    background-color: rgba(30, 25, 20, 0.88);
+    color: rgb(234, 223, 203);
+    border-top-color: rgb(178, 135, 60);
+    border-bottom-color: rgb(178, 135, 60);
+}
+
+.theme--auric .portrait-container {
+    background-color: rgba(60, 48, 36, 0.5);
+    border-color: rgb(125, 104, 71);
+}
+
+.theme--auric .player-portrait,
+.theme--auric .npc-portrait {
+    background-color: rgba(82, 64, 48, 0.7);
+    border-color: rgb(181, 140, 74);
+}
+
+.theme--auric .character-name { 
+    color: rgb(240, 216, 166); 
+}
+
+.theme--auric .dialogue-text-container {
+    background-color: rgba(48, 40, 32, 0.85);
+    border-color: rgb(178, 135, 60);
+}
+
+.theme--auric .dialogue-text {
+    color: rgb(234, 223, 203);
+}
+
+.theme--auric .response-container {
+    background-color: rgba(56, 46, 36, 0.7);
+    border-color: rgb(125, 104, 71);
+}
+
+.theme--auric .response-options Button {
+    background-color: rgba(110, 86, 56, 0.9);
+    border-color: rgb(181, 140, 74);
+    color: rgb(234, 223, 203);
+}
+
+.theme--auric .response-options Button:hover {
+    background-color: rgba(140, 108, 68, 1);
+    border-color: rgb(241, 211, 154);
+    color: rgb(255, 255, 255);
+}
+
+.theme--auric .dialogue-controls {
+    border-top-color: rgb(125, 104, 71);
+}
+
+.theme--auric .dialogue-button {
+    background-color: rgba(70, 56, 42, 0.9);
+    border-color: rgb(178, 135, 60);
+    color: rgb(234, 223, 203);
+}
+
+.theme--auric .dialogue-button:hover {
+    background-color: rgba(100, 80, 58, 0.95);
+    border-color: rgb(241, 211, 154);
+    color: rgb(255, 255, 255);
+}
+
+.theme--auric .dialogue-button.primary {
+    background-color: rgba(150, 112, 60, 0.98);
+    border-color: rgb(241, 211, 154);
+}
+
+.theme--auric .dialogue-button.primary:hover {
+    background-color: rgba(176, 136, 76, 1);
+    border-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.theme--auric .speed-label {
+    color: rgb(203, 192, 174);
+}

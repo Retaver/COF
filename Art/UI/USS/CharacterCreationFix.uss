@@ -1,0 +1,13 @@
+/* Fixes for CharacterCreation fields in Unity 6.x */
+
+/* Ensure dark background and light text for all TextField inputs */
+.unity-text-field__input {
+    background-color: #232833;
+    color: #E9EDF1;
+}
+
+/* Fallback for older versions using unity-text-input */
+.unity-text-input {
+    background-color: #232833;
+    color: #E9EDF1;
+}

@@ -1,0 +1,32 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Project/Art/UI/USS/DialogueUI.uss" />
+    <ui:VisualElement name="dialogue-container" class="dialogue-container theme--twilight font--ui">
+        <ui:VisualElement name="dialogue-portraits" class="dialogue-portraits">
+            <ui:VisualElement name="player-portrait-container" class="portrait-container">
+                <ui:Image name="player-portrait" class="player-portrait" />
+                <ui:Label name="player-name" text="Player Name" class="character-name font--title" />
+            </ui:VisualElement>
+            <ui:VisualElement name="npc-portrait-container" class="portrait-container">
+                <ui:Image name="npc-portrait" class="npc-portrait" />
+                <ui:Label name="npc-name" text="NPC Name" class="character-name font--title" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="dialogue-text-container" class="dialogue-text-container">
+            <ui:ScrollView name="dialogue-scroll" class="dialogue-scroll">
+                <ui:Label name="dialogue-text" text="Dialogue text will appear here." class="dialogue-text font--story" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="response-container" class="response-container">
+            <ui:ScrollView name="response-scroll" class="response-scroll">
+                <ui:VisualElement name="response-options" class="response-options" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="dialogue-controls" class="dialogue-controls">
+            <ui:VisualElement name="text-speed-controls" class="text-speed-controls" style="display: none;">
+                <ui:Label text="Speed:" class="speed-label" />
+                <ui:Slider name="text-speed-slider" low-value="0.5" high-value="3.0" value="1.0" class="speed-slider" />
+            </ui:VisualElement>
+            <ui:Button name="continue-button" text="Continue" class="dialogue-button primary font--ui" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

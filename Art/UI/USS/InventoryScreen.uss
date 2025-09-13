@@ -1,0 +1,716 @@
+﻿/* Fonts */
+.font--title { -unity-font: resource("Fonts/MLPTitle"); }
+.font--ui    { -unity-font: resource("Fonts/UIFont"); }
+
+/* Modal overlay - covers full screen but centers content */
+.inventory-modal-overlay {
+    position: absolute;
+    left: 0; 
+    top: 0; 
+    right: 0; 
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main container - centered, fixed size */
+.inventory-container {
+    width: 1000px;
+    max-width: 95%;
+    height: 700px;
+    max-height: 95%;
+    flex-direction: column;
+    background-color: rgb(28, 24, 40);
+    color: rgb(235, 230, 245);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgb(120, 96, 168);
+    overflow: hidden;
+}
+
+/* Header */
+.inventory-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(40, 36, 56);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(120, 96, 168);
+    padding: 12px 16px;
+    flex-shrink: 0;
+}
+
+.inventory-title {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: rgb(245, 240, 255);
+}
+
+.capacity-wrap {
+    flex-direction: row;
+    align-items: center;
+}
+
+.capacity-wrap > * {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.capacity-label {
+    font-size: 12px;
+    color: rgb(200, 192, 218);
+}
+
+/* Capacity Bar — pill style */
+.capacity-bar {
+    width: 200px;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    -unity-background-image: none;
+    background-color: transparent;
+}
+
+.capacity-bar .unity-progress-bar__background,
+.capacity-bar .unity-progress-bar__progress,
+.capacity-bar .unity-progress-bar__title {
+    -unity-background-image: none;
+}
+
+.capacity-bar .unity-progress-bar__title { 
+    display: none; 
+}
+
+.capacity-bar .unity-progress-bar__background {
+    background-color: rgba(54, 44, 72, 0.65);
+    border-width: 1px;
+    border-color: rgba(120, 96, 168, 0.45);
+    border-radius: 6px;
+}
+
+.capacity-bar .unity-progress-bar__progress {
+    background-color: rgb(158, 134, 206);
+    border-radius: 6px;
+}
+
+.capacity-bar.ok .unity-progress-bar__progress { 
+    background-color: rgb(150, 130, 210); 
+}
+
+.capacity-bar.warn .unity-progress-bar__progress { 
+    background-color: rgb(228, 176, 96); 
+}
+
+.capacity-bar.danger .unity-progress-bar__progress { 
+    background-color: rgb(214, 96, 112); 
+}
+
+/* Content layout */
+.inventory-content {
+    flex-grow: 1;
+    flex-direction: row;
+    padding: 12px;
+    min-height: 0;
+}
+
+.inventory-content > * {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+/* Left pane */
+.left-pane {
+    flex-grow: 1;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.left-pane > * {
+    margin-bottom: 8px;
+}
+
+/* Category tabs */
+.category-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+.category-tabs > * {
+    margin: 3px;
+}
+
+.category-tab {
+    min-width: 80px;
+    padding: 6px 10px;
+    background-color: rgb(56, 48, 78);
+    border-width: 1px;
+    border-color: rgb(110, 90, 146);
+    border-radius: 6px;
+    color: rgb(230, 224, 240);
+    -unity-text-align: middle-center;
+    font-size: 12px;
+}
+
+.category-tab:hover {
+    background-color: rgb(70, 58, 98);
+    border-color: rgb(140, 118, 178);
+    color: rgb(250, 246, 255);
+}
+
+.category-tab.active {
+    background-color: rgb(96, 76, 148);
+    border-color: rgb(170, 148, 208);
+    color: rgb(255, 252, 255);
+}
+
+/* Items area */
+.items-scroll {
+    flex-grow: 1;
+    background-color: rgb(34, 30, 48);
+    border-width: 1px;
+    border-color: rgb(84, 66, 112);
+    border-radius: 8px;
+    padding: 8px;
+    min-height: 0;
+}
+
+.items-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.items-grid > * {
+    margin: 4px;
+}
+
+/* Item slot */
+.item-slot {
+    width: 68px;
+    height: 68px;
+    background-color: rgb(52, 44, 74);
+    border-width: 1px;
+    border-color: rgb(110, 90, 146);
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-slot:hover {
+    background-color: rgb(64, 54, 92);
+    border-color: rgb(150, 128, 188);
+}
+
+.item-slot.selected {
+    border-color: rgb(200, 178, 240);
+    border-width: 2px;
+    background-color: rgb(72, 60, 110);
+}
+
+.item-icon {
+    width: 48px;
+    height: 48px;
+    background-color: rgb(22, 18, 30);
+    border-width: 1px;
+    border-color: rgb(110, 90, 146);
+    border-radius: 4px;
+}
+
+.item-quantity {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+    -unity-font-style: bold;
+    padding: 1px 3px;
+    border-radius: 2px;
+    min-width: 12px;
+    -unity-text-align: middle-center;
+}
+
+/* Details panel */
+.item-details {
+    width: 300px;
+    min-width: 280px;
+    max-width: 320px;
+    flex-direction: column;
+    background-color: rgb(40, 36, 56);
+    border-width: 1px;
+    border-color: rgb(84, 66, 112);
+    border-radius: 8px;
+    padding: 12px;
+    flex-shrink: 0;
+}
+
+.item-details > * {
+    margin-bottom: 8px;
+}
+
+.item-preview {
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(84, 66, 112);
+}
+
+.item-preview > * {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.item-info {
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.item-info > * {
+    margin-bottom: 2px;
+}
+
+.item-name {
+    font-size: 16px;
+    -unity-font-style: bold;
+    color: rgb(255, 252, 255);
+}
+
+.item-quantity-detail {
+    font-size: 12px;
+    color: rgb(200, 192, 218);
+}
+
+.item-description-scroll {
+    flex-grow: 1;
+    background-color: rgb(34, 30, 48);
+    border-width: 1px;
+    border-color: rgb(84, 66, 112);
+    border-radius: 6px;
+    padding: 8px;
+    min-height: 96px;
+    max-height: 150px;
+}
+
+.item-description {
+    font-size: 13px;
+    color: rgb(230, 224, 240);
+    white-space: normal;
+}
+
+/* Action buttons */
+.item-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-top: 4px;
+}
+
+.item-actions > * {
+    margin: 3px;
+}
+
+.item-action-button {
+    min-width: 70px;
+    padding: 6px 10px;
+    background-color: rgb(56, 48, 78);
+    border-width: 1px;
+    border-color: rgb(110, 90, 146);
+    border-radius: 6px;
+    color: rgb(235, 230, 245);
+    font-size: 12px;
+    -unity-text-align: middle-center;
+}
+
+.item-action-button:hover {
+    background-color: rgb(70, 58, 98);
+    border-color: rgb(140, 118, 178);
+}
+
+.item-action-button:disabled {
+    background-color: rgb(44, 38, 60);
+    color: rgb(150, 146, 160);
+    border-color: rgb(72, 62, 94);
+}
+
+.item-action-button.danger {
+    background-color: rgb(96, 60, 100);
+    border-color: rgb(168, 120, 176);
+}
+
+.item-action-button.danger:hover {
+    background-color: rgb(110, 70, 114);
+    border-color: rgb(188, 140, 196);
+}
+
+/* Footer */
+.inventory-footer {
+    flex-direction: row;
+    justify-content: flex-end;
+    border-top-width: 1px;
+    border-top-color: rgb(84, 66, 112);
+    padding: 12px 16px;
+    background-color: rgb(36, 30, 46);
+    flex-shrink: 0;
+}
+
+.inventory-footer > * {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.inventory-button {
+    min-width: 80px;
+    padding: 8px 12px;
+    background-color: rgb(56, 48, 78);
+    border-width: 1px;
+    border-color: rgb(110, 90, 146);
+    border-radius: 6px;
+    color: rgb(235, 230, 245);
+    font-size: 12px;
+    -unity-text-align: middle-center;
+}
+
+.inventory-button:hover {
+    background-color: rgb(70, 58, 98);
+    border-color: rgb(140, 118, 178);
+}
+
+.inventory-button.primary {
+    background-color: rgb(96, 76, 148);
+    border-color: rgb(170, 148, 208);
+    color: rgb(255, 252, 255);
+}
+
+.inventory-button.primary:hover {
+    background-color: rgb(110, 86, 162);
+    border-color: rgb(190, 168, 228);
+}
+
+/* TWILIGHT THEME */
+.theme--twilight .inventory-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.theme--twilight .inventory-container { 
+    background-color: rgb(28, 24, 40); 
+    color: rgb(235, 230, 245); 
+    border-color: rgb(120, 96, 168); 
+}
+
+.theme--twilight .inventory-header { 
+    background-color: rgb(40, 36, 56); 
+    border-bottom-color: rgb(120, 96, 168); 
+}
+
+.theme--twilight .inventory-title { 
+    color: rgb(245, 240, 255); 
+}
+
+.theme--twilight .capacity-label { 
+    color: rgb(200, 192, 218); 
+}
+
+.theme--twilight .capacity-bar .unity-progress-bar__background {
+    background-color: rgba(54, 44, 72, 0.65);
+    border-color: rgba(120, 96, 168, 0.45);
+}
+
+.theme--twilight .capacity-bar .unity-progress-bar__progress { 
+    background-color: rgb(158, 134, 206); 
+}
+
+.theme--twilight .capacity-bar.ok .unity-progress-bar__progress { 
+    background-color: rgb(150, 130, 210); 
+}
+
+.theme--twilight .capacity-bar.warn .unity-progress-bar__progress { 
+    background-color: rgb(228, 176, 96); 
+}
+
+.theme--twilight .capacity-bar.danger .unity-progress-bar__progress { 
+    background-color: rgb(214, 96, 112); 
+}
+
+.theme--twilight .items-scroll { 
+    background-color: rgb(34, 30, 48); 
+    border-color: rgb(84, 66, 112); 
+}
+
+.theme--twilight .category-tab { 
+    background-color: rgb(56, 48, 78); 
+    border-color: rgb(110, 90, 146); 
+    color: rgb(230, 224, 240); 
+}
+
+.theme--twilight .category-tab:hover { 
+    background-color: rgb(70, 58, 98); 
+    border-color: rgb(140, 118, 178); 
+    color: rgb(250, 246, 255); 
+}
+
+.theme--twilight .category-tab.active { 
+    background-color: rgb(96, 76, 148); 
+    border-color: rgb(170, 148, 208); 
+    color: rgb(255, 252, 255); 
+}
+
+.theme--twilight .item-slot { 
+    background-color: rgb(52, 44, 74); 
+    border-color: rgb(110, 90, 146); 
+}
+
+.theme--twilight .item-slot:hover { 
+    background-color: rgb(64, 54, 92); 
+    border-color: rgb(150, 128, 188); 
+}
+
+.theme--twilight .item-slot.selected { 
+    background-color: rgb(72, 60, 110); 
+    border-color: rgb(200, 178, 240); 
+}
+
+.theme--twilight .item-icon { 
+    background-color: rgb(22, 18, 30); 
+    border-color: rgb(110, 90, 146); 
+}
+
+.theme--twilight .item-details { 
+    background-color: rgb(40, 36, 56); 
+    border-color: rgb(84, 66, 112); 
+}
+
+.theme--twilight .item-preview { 
+    border-bottom-color: rgb(84, 66, 112); 
+}
+
+.theme--twilight .item-description-scroll { 
+    background-color: rgb(34, 30, 48); 
+    border-color: rgb(84, 66, 112); 
+}
+
+.theme--twilight .item-name { 
+    color: rgb(255, 252, 255); 
+}
+
+.theme--twilight .item-quantity-detail { 
+    color: rgb(200, 192, 218); 
+}
+
+.theme--twilight .item-description {
+    color: rgb(230, 224, 240);
+}
+
+.theme--twilight .item-action-button { 
+    background-color: rgb(56, 48, 78); 
+    border-color: rgb(110, 90, 146); 
+    color: rgb(235, 230, 245); 
+}
+
+.theme--twilight .item-action-button:hover { 
+    background-color: rgb(70, 58, 98); 
+    border-color: rgb(140, 118, 178); 
+}
+
+.theme--twilight .item-action-button.danger { 
+    background-color: rgb(96, 60, 100); 
+    border-color: rgb(168, 120, 176); 
+}
+
+.theme--twilight .item-action-button.danger:hover {
+    background-color: rgb(110, 70, 114);
+    border-color: rgb(188, 140, 196);
+}
+
+.theme--twilight .inventory-footer { 
+    border-top-color: rgb(84, 66, 112); 
+    background-color: rgb(36, 30, 46); 
+}
+
+.theme--twilight .inventory-button { 
+    background-color: rgb(56, 48, 78); 
+    border-color: rgb(110, 90, 146); 
+    color: rgb(235, 230, 245); 
+}
+
+.theme--twilight .inventory-button:hover { 
+    background-color: rgb(70, 58, 98); 
+    border-color: rgb(140, 118, 178); 
+}
+
+.theme--twilight .inventory-button.primary { 
+    background-color: rgb(96, 76, 148); 
+    border-color: rgb(170, 148, 208); 
+    color: rgb(255, 252, 255); 
+}
+
+.theme--twilight .inventory-button.primary:hover {
+    background-color: rgb(110, 86, 162);
+    border-color: rgb(190, 168, 228);
+}
+
+/* AURIC THEME */
+.theme--auric .inventory-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.theme--auric .inventory-container { 
+    background-color: rgb(30, 25, 20); 
+    color: rgb(234, 223, 203); 
+    border-color: rgb(178, 135, 60); 
+}
+
+.theme--auric .inventory-header { 
+    background-color: rgb(45, 40, 35); 
+    border-bottom-color: rgb(178, 135, 60); 
+}
+
+.theme--auric .inventory-title { 
+    color: rgb(245, 236, 220); 
+}
+
+.theme--auric .capacity-label { 
+    color: rgb(214, 204, 184); 
+}
+
+.theme--auric .capacity-bar .unity-progress-bar__background {
+    background-color: rgba(64, 52, 40, 0.65);
+    border-color: rgba(110, 96, 80, 0.5);
+}
+
+.theme--auric .capacity-bar .unity-progress-bar__progress { 
+    background-color: rgb(200, 168, 96); 
+}
+
+.theme--auric .capacity-bar.ok .unity-progress-bar__progress { 
+    background-color: rgb(196, 168, 108); 
+}
+
+.theme--auric .capacity-bar.warn .unity-progress-bar__progress { 
+    background-color: rgb(228, 188, 96); 
+}
+
+.theme--auric .capacity-bar.danger .unity-progress-bar__progress { 
+    background-color: rgb(210, 110, 86); 
+}
+
+.theme--auric .items-scroll { 
+    background-color: rgb(38, 32, 26); 
+    border-color: rgb(110, 96, 80); 
+}
+
+.theme--auric .category-tab { 
+    background-color: rgb(60, 50, 40); 
+    border-color: rgb(110, 96, 80); 
+    color: rgb(234, 223, 203); 
+}
+
+.theme--auric .category-tab:hover { 
+    background-color: rgb(76, 64, 52); 
+    border-color: rgb(150, 128, 90); 
+    color: rgb(250, 240, 224); 
+}
+
+.theme--auric .category-tab.active { 
+    background-color: rgb(120, 96, 60); 
+    border-color: rgb(180, 150, 96); 
+    color: rgb(255, 248, 232); 
+}
+
+.theme--auric .item-slot { 
+    background-color: rgb(66, 54, 42); 
+    border-color: rgb(110, 96, 80); 
+}
+
+.theme--auric .item-slot:hover { 
+    background-color: rgb(80, 66, 52); 
+    border-color: rgb(150, 128, 90); 
+}
+
+.theme--auric .item-slot.selected { 
+    background-color: rgb(96, 78, 60); 
+    border-color: rgb(236, 210, 150); 
+}
+
+.theme--auric .item-icon { 
+    background-color: rgb(40, 32, 24); 
+    border-color: rgb(110, 96, 80); 
+}
+
+.theme--auric .item-details { 
+    background-color: rgb(45, 40, 35); 
+    border-color: rgb(110, 96, 80); 
+}
+
+.theme--auric .item-preview { 
+    border-bottom-color: rgb(110, 96, 80); 
+}
+
+.theme--auric .item-description-scroll { 
+    background-color: rgb(38, 32, 26); 
+    border-color: rgb(110, 96, 80); 
+}
+
+.theme--auric .item-name { 
+    color: rgb(250, 242, 224); 
+}
+
+.theme--auric .item-quantity-detail { 
+    color: rgb(214, 204, 184); 
+}
+
+.theme--auric .item-description {
+    color: rgb(230, 220, 210);
+}
+
+.theme--auric .item-action-button { 
+    background-color: rgb(60, 50, 40); 
+    border-color: rgb(110, 96, 80); 
+    color: rgb(234, 223, 203); 
+}
+
+.theme--auric .item-action-button:hover { 
+    background-color: rgb(76, 64, 52); 
+    border-color: rgb(150, 128, 90); 
+}
+
+.theme--auric .item-action-button.danger { 
+    background-color: rgb(110, 86, 56); 
+    border-color: rgb(180, 150, 96); 
+}
+
+.theme--auric .item-action-button.danger:hover {
+    background-color: rgb(124, 96, 66);
+    border-color: rgb(200, 170, 116);
+}
+
+.theme--auric .inventory-footer { 
+    border-top-color: rgb(110, 96, 80); 
+    background-color: rgb(42, 36, 30); 
+}
+
+.theme--auric .inventory-button { 
+    background-color: rgb(60, 50, 40); 
+    border-color: rgb(110, 96, 80); 
+    color: rgb(234, 223, 203); 
+}
+
+.theme--auric .inventory-button:hover { 
+    background-color: rgb(76, 64, 52); 
+    border-color: rgb(150, 128, 90); 
+}
+
+.theme--auric .inventory-button.primary { 
+    background-color: rgb(150, 120, 72); 
+    border-color: rgb(210, 180, 120); 
+    color: rgb(255, 248, 232); 
+}
+
+.theme--auric .inventory-button.primary:hover {
+    background-color: rgb(164, 134, 86);
+    border-color: rgb(230, 200, 140);
+}

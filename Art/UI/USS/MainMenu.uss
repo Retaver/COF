@@ -1,0 +1,276 @@
+
+.main-menu {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(10, 8, 12);
+}
+
+.menu-card {
+    min-width: 560px;
+    max-width: 980px;
+    width: 74%;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 16px;
+    padding-bottom: 18px;
+    background-color: rgba(22, 18, 24, 0.92);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(92, 78, 70);
+    border-right-color: rgb(92, 78, 70);
+    border-top-color: rgb(92, 78, 70);
+    border-bottom-color: rgb(92, 78, 70);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.title-stack {
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.title-acro {
+    color: rgb(244, 162, 232);
+    font-size: 72px;
+    -unity-font-style: bold;
+    opacity: 0.98;
+    -unity-font: resource("Fonts & Materials/PONY-MLP 2 -Version2");
+}
+
+.title-acro.shadow {
+    color: rgba(60, 20, 70, 0.9);
+    font-size: 72px;
+    -unity-font-style: bold;
+    margin-top: 6px;
+    margin-left: 6px;
+    opacity: 0.85;
+    -unity-font: resource("Fonts & Materials/PONY-MLP 2 -Version2");
+}
+
+.title-full {
+    font-size: 16px;
+    color: rgb(226, 206, 244);
+    -unity-text-align: middle-center;
+    opacity: 0.95;
+    margin-top: 108px;
+    margin-bottom: 8px;
+    -unity-font: resource("Fonts & Materials/PONY-MLP 2 -Version2");
+}
+
+.game-version {
+    font-size: 11px;
+    color: rgb(158, 146, 168);
+    -unity-text-align: middle-center;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    -unity-font: resource("Fonts & Materials/PONY-MLP 2 -Version2");
+}
+
+.menu-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+
+.menu-button {
+    min-height: 46px;
+    background-color: rgba(42, 30, 46, 0.96);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(108, 92, 110);
+    border-right-color: rgb(108, 92, 110);
+    border-top-color: rgb(108, 92, 110);
+    border-bottom-color: rgb(108, 92, 110);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 220px;
+    margin-top: 10px;
+    margin-left: 6px;
+    margin-right: 6px;
+    -unity-font: resource("Fonts & Materials/PONY-MLP 2 -Version2");
+}
+
+.menu-button .unity-button__text {
+    -unity-text-align: middle-center;
+    color: rgb(232, 222, 238);
+    font-size: 15px;
+    -unity-font-style: bold;
+    -unity-font: resource("Fonts & Materials/PONY-MLP 2 -Version2");
+}
+
+.menu-button:hover { 
+    background-color: rgba(54, 38, 60, 1.0); 
+}
+
+.menu-button:focus {
+    border-left-color: rgb(196, 166, 188);
+    border-right-color: rgb(196, 166, 188);
+    border-top-color: rgb(196, 166, 188);
+    border-bottom-color: rgb(196, 166, 188);
+}
+
+.menu-button:active { 
+    opacity: 0.96; 
+}
+
+.menu-button.primary { 
+    min-height: 50px; 
+    background-color: rgba(66, 44, 74, 0.98); 
+}
+
+.menu-button.danger:hover { 
+    background-color: rgba(62, 34, 40, 0.98); 
+}
+
+.legal-line {
+    font-size: 10px;
+    color: rgb(170, 160, 176);
+    -unity-text-align: middle-center;
+    margin-top: 10px;
+    -unity-font: resource("Fonts & Materials/PONY-MLP 2 -Version2");
+}
+
+/* TWILIGHT THEME */
+.theme--twilight .main-menu {
+    background-color: rgb(10, 8, 12);
+}
+
+.theme--twilight .menu-card {
+    background-color: rgba(22, 18, 24, 0.92);
+    border-left-color: rgb(92, 78, 110);
+    border-right-color: rgb(92, 78, 110);
+    border-top-color: rgb(92, 78, 110);
+    border-bottom-color: rgb(92, 78, 110);
+}
+
+.theme--twilight .title-acro {
+    color: rgb(244, 162, 232);
+}
+
+.theme--twilight .title-acro.shadow {
+    color: rgba(60, 20, 70, 0.9);
+}
+
+.theme--twilight .title-full {
+    color: rgb(226, 206, 244);
+}
+
+.theme--twilight .game-version {
+    color: rgb(158, 146, 168);
+}
+
+.theme--twilight .menu-button {
+    background-color: rgba(42, 30, 46, 0.96);
+    border-left-color: rgb(108, 92, 110);
+    border-right-color: rgb(108, 92, 110);
+    border-top-color: rgb(108, 92, 110);
+    border-bottom-color: rgb(108, 92, 110);
+}
+
+.theme--twilight .menu-button .unity-button__text {
+    color: rgb(232, 222, 238);
+}
+
+.theme--twilight .menu-button:hover {
+    background-color: rgba(54, 38, 60, 1.0);
+}
+
+.theme--twilight .menu-button.primary {
+    background-color: rgba(66, 44, 74, 0.98);
+    border-left-color: rgb(132, 108, 140);
+    border-right-color: rgb(132, 108, 140);
+    border-top-color: rgb(132, 108, 140);
+    border-bottom-color: rgb(132, 108, 140);
+}
+
+.theme--twilight .menu-button.danger:hover {
+    background-color: rgba(62, 34, 40, 0.98);
+}
+
+.theme--twilight .legal-line {
+    color: rgb(170, 160, 176);
+}
+
+/* AURIC THEME */
+.theme--auric .main-menu {
+    background-color: rgb(12, 10, 8);
+}
+
+.theme--auric .menu-card {
+    background-color: rgba(18, 15, 12, 0.95);
+    border-left-color: rgb(85, 75, 65);
+    border-right-color: rgb(85, 75, 65);
+    border-top-color: rgb(85, 75, 65);
+    border-bottom-color: rgb(85, 75, 65);
+}
+
+.theme--auric .title-acro {
+    color: rgb(240, 180, 120);
+}
+
+.theme--auric .title-acro.shadow {
+    color: rgba(60, 40, 20, 0.9);
+}
+
+.theme--auric .title-full {
+    color: rgb(220, 200, 170);
+}
+
+.theme--auric .game-version {
+    color: rgb(160, 150, 130);
+}
+
+.theme--auric .menu-button {
+    background-color: rgba(36, 28, 22, 0.96);
+    border-left-color: rgb(100, 88, 78);
+    border-right-color: rgb(100, 88, 78);
+    border-top-color: rgb(100, 88, 78);
+    border-bottom-color: rgb(100, 88, 78);
+}
+
+.theme--auric .menu-button .unity-button__text {
+    color: rgb(220, 210, 200);
+}
+
+.theme--auric .menu-button:hover {
+    background-color: rgba(48, 38, 30, 1.0);
+    border-left-color: rgb(130, 116, 104);
+    border-right-color: rgb(130, 116, 104);
+    border-top-color: rgb(130, 116, 104);
+    border-bottom-color: rgb(130, 116, 104);
+}
+
+.theme--auric .menu-button.primary {
+    background-color: rgba(72, 52, 38, 0.98);
+    border-left-color: rgb(148, 110, 82);
+    border-right-color: rgb(148, 110, 82);
+    border-top-color: rgb(148, 110, 82);
+    border-bottom-color: rgb(148, 110, 82);
+}
+
+.theme--auric .menu-button.danger:hover {
+    background-color: rgba(62, 44, 36, 0.98);
+}
+
+.theme--auric .legal-line {
+    color: rgb(160, 150, 140);
+}

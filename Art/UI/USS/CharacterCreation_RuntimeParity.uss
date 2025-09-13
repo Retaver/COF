@@ -1,0 +1,51 @@
+/* CharacterCreation_RuntimeParity.uss
+   Load AFTER CharacterCreation_Matched.uss and CharacterCreation_Compact.uss
+   Forces runtime text fields/pills to match UI Builder dark theme.
+*/
+
+/* TextField background + text color */
+.cc-input {
+    background-color: #232833;
+    color: #E9EDF1;
+    border-left-color: #2F3744;
+    border-right-color: #2F3744;
+    border-top-color: #2F3744;
+    border-bottom-color: #2F3744;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-radius: 6px;
+}
+
+/* Inner input element inside TextField */
+.cc-input .unity-text-input {
+    background-color: #232833;
+    color: #E9EDF1;
+}
+
+/* Focus ring */
+.cc-input:focus-within {
+    border-left-color: #3B82F6;
+    border-right-color: #3B82F6;
+    border-top-color: #3B82F6;
+    border-bottom-color: #3B82F6;
+}
+
+/* Pills/Buttons parity just in case */
+.pill, .stat-btn, .cc-nav {
+    background-color: #232833;
+    border-left-color: #2F3744;
+    border-right-color: #2F3744;
+    border-top-color: #2F3744;
+    border-bottom-color: #2F3744;
+}
+
+.pill.selected, .cc-nav.primary {
+    background-color: #3B82F6;
+    border-left-color: #3B82F6;
+    border-right-color: #3B82F6;
+    border-top-color: #3B82F6;
+    border-bottom-color: #3B82F6;
+    color: #FFFFFF;
+}

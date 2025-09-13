@@ -1,0 +1,34 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Project/Art/UI/USS/MainMenu.uss" />
+    <ui:VisualElement name="main-menu-root" class="main-menu theme--twilight">
+        <ui:VisualElement name="menu-card" class="menu-card">
+            <ui:VisualElement name="title-stack" class="title-stack">
+                <ui:Label name="title-acro-shadow" text="CWF" class="title-acro shadow" style="text-overflow: clip; white-space: pre; height: 8px;" />
+                <ui:Label name="title-acro" text="CWF" class="title-acro" style="height: 83px;" />
+            </ui:VisualElement>
+            <ui:Label name="title-full" text="C R O S S W O R L D S   O F   F R I E N D S H I P" class="title-full" />
+            <ui:Label name="game-version" text="Game Version: 0.1.0" class="game-version" />
+            <ui:VisualElement name="menu-grid" class="menu-grid">
+                <ui:Button name="start-button" class="menu-button primary">
+                    <ui:Label text="New Game" class="unity-button__text" />
+                </ui:Button>
+                <ui:Button name="continue-button" class="menu-button">
+                    <ui:Label text="Continue" class="unity-button__text" />
+                </ui:Button>
+                <ui:Button name="load-button" class="menu-button">
+                    <ui:Label text="Load" class="unity-button__text" />
+                </ui:Button>
+                <ui:Button name="options-button" class="menu-button">
+                    <ui:Label text="Options" class="unity-button__text" />
+                </ui:Button>
+                <ui:Button name="credits-button" class="menu-button">
+                    <ui:Label text="Credits" class="unity-button__text" />
+                </ui:Button>
+                <ui:Button name="exit-button" class="menu-button danger">
+                    <ui:Label text="Quit" class="unity-button__text" />
+                </ui:Button>
+            </ui:VisualElement>
+            <ui:Label name="legal-line" text="(c) Retaver - All rights to their owners." class="legal-line" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

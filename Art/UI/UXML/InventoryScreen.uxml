@@ -1,0 +1,63 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Project/Art/UI/USS/InventoryScreen.uss" />
+    <ui:VisualElement name="inventory-modal" class="inventory-modal-overlay theme--twilight">
+        <ui:VisualElement name="inventory-container" class="inventory-container font--ui">
+            <ui:VisualElement name="inventory-header" class="inventory-header">
+                <ui:Label text="Saddlebags" class="inventory-title font--title" />
+                <ui:VisualElement class="capacity-wrap">
+                    <ui:Label name="capacity-label" text="Capacity: 0/100" class="capacity-label" />
+                    <ui:ProgressBar name="capacity-bar" value="0" high-value="100" class="capacity-bar ok" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="inventory-content" class="inventory-content">
+                <ui:VisualElement name="left-pane" class="left-pane">
+                    <ui:VisualElement name="category-tabs" class="category-tabs">
+                        <ui:Button name="all-tab" text="All" class="category-tab active" />
+                        <ui:Button name="weapons-tab" text="Weapons" class="category-tab" />
+                        <ui:Button name="armor-tab" text="Armor" class="category-tab" />
+                        <ui:Button name="consumables-tab" text="Consumables" class="category-tab" />
+                        <ui:Button name="quest-tab" text="Quest Items" class="category-tab" />
+                        <ui:Button name="misc-tab" text="Misc" class="category-tab" />
+                    </ui:VisualElement>
+                    <ui:ScrollView name="items-scroll" class="items-scroll">
+                        <ui:VisualElement name="items-grid" class="items-grid">
+                            <ui:VisualElement name="sample-item-1" class="item-slot">
+                                <ui:Image name="sample-item-icon-1" class="item-icon" />
+                                <ui:Label name="sample-item-quantity-1" text="x3" class="item-quantity" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="sample-item-2" class="item-slot">
+                                <ui:Image name="sample-item-icon-2" class="item-icon" />
+                                <ui:Label name="sample-item-quantity-2" text="x1" class="item-quantity" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="sample-item-3" class="item-slot selected">
+                                <ui:Image name="sample-item-icon-3" class="item-icon" />
+                                <ui:Label name="sample-item-quantity-3" text="x5" class="item-quantity" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:ScrollView>
+                </ui:VisualElement>
+                <ui:VisualElement name="item-details" class="item-details">
+                    <ui:VisualElement name="item-preview" class="item-preview">
+                        <ui:Image name="item-icon" class="item-icon" />
+                        <ui:VisualElement class="item-info">
+                            <ui:Label name="item-name" text="Health Potion" class="item-name" />
+                            <ui:Label name="item-quantity" text="x5" class="item-quantity-detail" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:ScrollView name="item-description-scroll" class="item-description-scroll">
+                        <ui:Label name="item-description" text="A magical potion that restores health when consumed. Brewed with healing herbs and enchanted spring water. Restores 50 HP when used." class="item-description" />
+                    </ui:ScrollView>
+                    <ui:VisualElement name="item-actions" class="item-actions">
+                        <ui:Button name="use-button" text="Use" class="item-action-button" />
+                        <ui:Button name="equip-button" text="Equip" class="item-action-button" style="display: none;" />
+                        <ui:Button name="drop-button" text="Drop" class="item-action-button danger" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="inventory-footer" class="inventory-footer">
+                <ui:Button name="sort-button" text="Sort" class="inventory-button" />
+                <ui:Button name="close-button" text="Close" class="inventory-button primary" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

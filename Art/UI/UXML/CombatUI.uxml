@@ -1,0 +1,96 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Project/Art/UI/USS/CombatUI.uss" />
+    <ui:VisualElement name="combat-container" class="combat-container theme--twilight">
+        <ui:VisualElement name="combat-header" class="combat-header">
+            <ui:Label text="Combat" name="combat-title" class="combat-title" />
+        </ui:VisualElement>
+        <ui:VisualElement name="combat-main" class="combat-main">
+            <ui:VisualElement name="combat-left-panel" class="combat-left-panel">
+                <ui:VisualElement name="player-card" class="character-card player">
+                    <ui:Label text="Player Name" name="player-name" class="character-name" />
+                    <ui:VisualElement name="player-portrait" class="character-portrait player" />
+                    <ui:Label text="Lv 1" name="player-info" class="character-info" />
+                    <ui:VisualElement name="player-stats" class="stats-container">
+                        <ui:VisualElement name="player-health-group" class="stat-group">
+                            <ui:Label text="Health" class="stat-label" />
+                            <ui:VisualElement class="stat-bar-container">
+                                <ui:VisualElement name="player-health-fill" class="stat-bar-fill health-fill" />
+                                <ui:Label name="player-health-text" text="100 / 100" class="stat-bar-text" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="player-energy-group" class="stat-group">
+                            <ui:Label text="Energy" class="stat-label" />
+                            <ui:VisualElement class="stat-bar-container">
+                                <ui:VisualElement name="player-energy-fill" class="stat-bar-fill energy-fill" />
+                                <ui:Label name="player-energy-text" text="100 / 100" class="stat-bar-text" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="player-mana-group" class="stat-group last-child">
+                            <ui:Label text="Magic" class="stat-label" />
+                            <ui:VisualElement class="stat-bar-container">
+                                <ui:VisualElement name="player-mana-fill" class="stat-bar-fill mana-fill" />
+                                <ui:Label name="player-mana-text" text="50 / 50" class="stat-bar-text" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="combat-center-panel" class="combat-center-panel">
+                <ui:VisualElement name="scene-description" class="scene-description">
+                    <ui:Label text="Battle Scene" name="scene-title" class="scene-title" />
+                    <ui:Label text="You face your enemy in combat!" name="scene-text" class="scene-text" />
+                </ui:VisualElement>
+                <ui:VisualElement name="combat-log" class="combat-log">
+                    <ui:VisualElement name="combat-log-header" class="combat-log-header">
+                        <ui:Label text="Combat Log" name="combat-log-title" class="combat-log-title" />
+                    </ui:VisualElement>
+                    <ui:ScrollView name="combat-log-scroll" class="combat-log-scroll" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="combat-right-panel" class="combat-right-panel">
+                <ui:VisualElement name="enemy-card" class="character-card enemy">
+                    <ui:Label text="enemy" name="enemy-name" class="character-name" />
+                    <ui:VisualElement name="enemy-portrait" class="character-portrait enemy" />
+                    <ui:Label text="Level 1 Hostile" name="enemy-info" class="character-info" />
+                    <ui:VisualElement name="enemy-stats" class="stats-container">
+                        <ui:VisualElement name="enemy-health-group" class="stat-group last-child">
+                            <ui:Label text="Health" class="stat-label" />
+                            <ui:VisualElement class="stat-bar-container">
+                                <ui:VisualElement name="enemy-health-fill" class="stat-bar-fill health-fill" />
+                                <ui:Label name="enemy-health-text" text="80 / 80" class="stat-bar-text" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="combat-actions-panel" class="combat-actions-panel">
+            <ui:VisualElement name="attack-category" class="bottom-action-category">
+                <ui:Label text="Attack" class="bottom-category-title attack-title" />
+                <ui:VisualElement name="attack-list" class="bottom-action-list action-grid" />
+            </ui:VisualElement>
+            <ui:VisualElement name="magic-category" class="bottom-action-category">
+                <ui:Label text="Special" class="bottom-category-title special-title" />
+                <ui:VisualElement name="magic-list" class="bottom-action-list action-grid" />
+            </ui:VisualElement>
+            <ui:VisualElement name="special-category" class="bottom-action-category last-child">
+                <ui:Label text="Act" class="bottom-category-title special-title" />
+                <ui:VisualElement name="special-list" class="bottom-action-list action-grid" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="combat-bottom-panel" class="combat-bottom-panel">
+            <ui:VisualElement name="quick-actions" class="quick-action-group">
+                <ui:Button text="Item" name="use-item" class="quick-button" />
+                <ui:Button text="Wait" name="wait" class="quick-button" />
+                <ui:Button text="Inspect" name="inspect" class="quick-button last-child" />
+            </ui:VisualElement>
+            <ui:Label text="Your Turn" name="turn-indicator" class="turn-indicator player-turn" />
+            <ui:VisualElement name="info-group" class="quick-action-group">
+                <ui:Label text="Round 1" name="round-counter" class="round-counter" />
+                <ui:Button text="Menu" name="menu" class="quick-button" />
+                <ui:Button text="Auto" name="auto" class="quick-button last-child" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="fx-layer" class="fx-layer" />
+    </ui:VisualElement>
+</ui:UXML>

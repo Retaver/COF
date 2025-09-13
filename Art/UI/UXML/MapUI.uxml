@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="UnityEngine.UIElements"
+    xmlns:uie="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd">
+    <!--
+        MapUI.uxml
+        Defines the basic structure for the world map panel.  The actual map
+        tiles are populated at runtime by the MapController component.  A
+        separate USS file (MapUI.uss) provides styling for the root, grid
+        container and individual tiles.  See the MapController script for
+        implementation details.
+    -->
+    <Style src="project://database/Assets/Project/Art/UI/USS/MapUI.uss" />
+    <ui:VisualElement name="MapRoot" class="map-root">
+        <ui:Label name="MapTitle" text="Map" class="map-title" />
+        <ui:VisualElement name="MapGrid" class="map-grid" />
+        <ui:Label name="MapDescription" text="" class="map-description" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,115 @@
+﻿<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <ui:Style src="../USS/PauseMenu.uss#PauseMenu" />
+    <!-- Overlay root -->
+    <ui:VisualElement class="pause-overlay theme--auric">
+        <!-- Main pause menu container (the controller will toggle visibility of these panels) -->
+        <ui:VisualElement name="pause-menu" class="pause-panel">
+            <ui:Label text="Paused" class="pause-title" />
+
+            <ui:VisualElement class="rune-divider">
+                <ui:VisualElement class="line left" />
+                <ui:Label class="glyph" text="✶" />
+                <ui:VisualElement class="line right" />
+            </ui:VisualElement>
+
+            <!-- Primary options -->
+            <ui:Button name="resume-button" class="pause-button primary">
+                <ui:Label class="unity-button__text" text="Resume" />
+            </ui:Button>
+
+            <ui:Button name="save-button" class="pause-button">
+                <ui:Label class="unity-button__text" text="Save Game" />
+            </ui:Button>
+
+            <ui:Button name="load-button" class="pause-button">
+                <ui:Label class="unity-button__text" text="Load Game" />
+            </ui:Button>
+
+            <ui:Button name="settings-button" class="pause-button">
+                <ui:Label class="unity-button__text" text="Settings" />
+            </ui:Button>
+
+            <ui:Button name="mainmenu-button" class="pause-button">
+                <ui:Label class="unity-button__text" text="Return to Main Menu" />
+            </ui:Button>
+
+            <!-- NOTE: name changed to match PauseMenuController field 'quit-button' -->
+            <ui:Button name="quit-button" class="pause-button pause-button--danger">
+                <ui:Label class="unity-button__text" text="Exit Game" />
+            </ui:Button>
+
+            <ui:Label text="Press Esc to resume" class="pause-hint" />
+        </ui:VisualElement>
+
+        <!-- Save / Load menu (hidden by default) -->
+        <ui:VisualElement name="save-load-menu" class="pause-panel hidden">
+            <ui:Label text="Save / Load" class="pause-title" />
+
+            <ui:VisualElement class="rune-divider">
+                <ui:VisualElement class="line left" />
+                <ui:Label class="glyph" text="✶" />
+                <ui:VisualElement class="line right" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="save-row">
+                <ui:Label text="Save name:" class="field-label" />
+                <ui:TextField name="save-name-field" value="quicksave" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="button-row">
+                <ui:Button name="confirm-save" class="pause-button primary">
+                    <ui:Label class="unity-button__text" text="Confirm Save" />
+                </ui:Button>
+
+                <ui:Button name="confirm-load" class="pause-button">
+                    <ui:Label class="unity-button__text" text="Confirm Load" />
+                </ui:Button>
+
+                <ui:Button name="back-save" class="pause-button">
+                    <ui:Label class="unity-button__text" text="Back" />
+                </ui:Button>
+            </ui:VisualElement>
+
+            <ui:VisualElement class="saves-section">
+                <ui:Label text="Saved Games" class="section-title" />
+                <ui:ScrollView name="save-slots" class="save-slots" />
+                <ui:Button name="clear-all-saves" class="pause-button pause-button--danger">
+                    <ui:Label class="unity-button__text" text="Clear All Saves" />
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Settings menu (hidden by default) -->
+        <ui:VisualElement name="settings-menu" class="pause-panel hidden">
+            <ui:Label text="Settings" class="pause-title" />
+            <ui:VisualElement class="rune-divider">
+                <ui:VisualElement class="line left" />
+                <ui:Label class="glyph" text="✶" />
+                <ui:VisualElement class="line right" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="settings-list">
+                <ui:VisualElement class="setting-row">
+                    <ui:Label text="Master Volume" class="field-label" />
+                    <ui:Slider name="master-volume" low-value="0" high-value="1" value="1" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="setting-row">
+                    <ui:Label text="SFX Volume" class="field-label" />
+                    <ui:Slider name="sfx-volume" low-value="0" high-value="1" value="1" />
+                </ui:VisualElement>
+
+                <ui:VisualElement class="setting-row">
+                    <ui:Label text="Music Volume" class="field-label" />
+                    <ui:Slider name="music-volume" low-value="0" high-value="1" value="1" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+
+            <ui:VisualElement class="button-row">
+                <ui:Button name="back-settings" class="pause-button">
+                    <ui:Label class="unity-button__text" text="Back" />
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

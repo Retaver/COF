@@ -1,0 +1,187 @@
+/* Semantic colors */
+.t-positive,
+.t-success,
+.t-gain {
+  color: rgb(140, 220, 160);
+}
+
+.t-negative,
+.t-danger,
+.t-loss {
+  color: rgb(214, 96, 112);
+}
+
+.t-warning,
+.t-caution {
+  color: rgb(214, 178, 96);
+}
+
+.t-info,
+.t-neutral {
+  color: rgb(122, 164, 236);
+}
+
+.t-magical,
+.t-special {
+  color: rgb(176, 72, 160);
+}
+
+/* Attribute colors */
+.t-strength { color: rgb(214, 96, 112); }      /* red */
+.t-dexterity { color: rgb(140, 220, 160); }    /* green */
+.t-constitution { color: rgb(214, 178, 96); }  /* gold */
+.t-intelligence { color: rgb(122, 164, 236); } /* blue */
+.t-wisdom { color: rgb(150, 130, 210); }       /* purple */
+.t-charisma { color: rgb(176, 72, 160); }      /* magenta */
+
+/* Damage types */
+.t-physical { color: rgb(186, 176, 200); }     /* neutral gray */
+.t-fire { color: rgb(255, 140, 120); }         /* bright red */
+.t-ice { color: rgb(120, 200, 255); }          /* bright blue */
+.t-lightning { color: rgb(255, 255, 140); }    /* bright yellow */
+.t-poison { color: rgb(160, 255, 120); }       /* bright green */
+.t-dark { color: rgb(120, 120, 180); }         /* dark purple */
+.t-light { color: rgb(255, 245, 200); }        /* bright white/yellow */
+
+/* Rarity colors */
+.t-common,
+.rarity-common {
+  color: rgb(220, 212, 230);
+}
+
+.t-uncommon,
+.rarity-uncommon {
+  color: rgb(140, 220, 160);
+}
+
+.t-rare,
+.rarity-rare {
+  color: rgb(150, 130, 210);
+}
+
+.t-epic,
+.rarity-epic {
+  color: rgb(176, 72, 160);
+}
+
+.t-legendary,
+.rarity-legendary {
+  color: rgb(214, 178, 96);
+}
+
+.t-artifact,
+.rarity-artifact {
+  color: rgb(255, 182, 193);
+}
+
+/* Status indicators */
+.t-healthy { color: rgb(140, 220, 160); }
+.t-injured { color: rgb(214, 178, 96); }
+.t-critical { color: rgb(214, 96, 112); }
+.t-dead { color: rgb(120, 96, 120); }
+
+.t-full { color: rgb(140, 220, 160); }
+.t-low { color: rgb(214, 178, 96); }
+.t-empty { color: rgb(214, 96, 112); }
+
+/* Text emphasis */
+.t-muted,
+.t-disabled {
+  color: rgba(186, 176, 200, 0.6);
+}
+
+.t-highlight,
+.t-emphasis {
+  color: rgb(255, 245, 255);
+  -unity-font-style: bold;
+}
+
+.t-title {
+  color: rgb(238, 232, 244);
+  -unity-font-style: bold;
+}
+
+.t-subtitle {
+  color: rgb(196, 186, 210);
+}
+
+.t-body {
+  color: rgb(220, 212, 230);
+}
+
+.t-caption {
+  color: rgb(186, 176, 200);
+  font-size: 10px;
+}
+
+/* Interactive states */
+.t-link,
+.t-clickable {
+  color: rgb(150, 130, 210);
+}
+
+.t-link:hover,
+.t-clickable:hover {
+  color: rgb(180, 160, 230);
+}
+
+.t-selected,
+.t-active {
+  color: rgb(238, 232, 244);
+  -unity-font-style: bold;
+}
+
+/* Numerical displays */
+.t-currency {
+  color: rgb(214, 178, 96);
+  -unity-font-style: bold;
+}
+
+.t-experience {
+  color: rgb(150, 130, 210);
+}
+
+.t-level {
+  color: rgb(214, 178, 96);
+  -unity-font-style: bold;
+}
+
+/* Combat/action text */
+.t-damage { color: rgb(214, 96, 112); }
+.t-healing { color: rgb(140, 220, 160); }
+.t-miss { color: rgb(186, 176, 200); }
+.t-critical-hit {
+  color: rgb(255, 200, 100);
+  -unity-font-style: bold;
+}
+
+/* High contrast theme overrides */
+.theme--contrast .t-positive,
+.theme--contrast .t-success,
+.theme--contrast .t-gain { 
+  color: rgb(180, 255, 200); 
+}
+
+.theme--contrast .t-negative,
+.theme--contrast .t-danger,
+.theme--contrast .t-loss { 
+  color: rgb(255, 160, 180); 
+}
+
+.theme--contrast .t-warning,
+.theme--contrast .t-caution { 
+  color: rgb(255, 220, 140); 
+}
+
+.theme--contrast .t-info,
+.theme--contrast .t-neutral { 
+  color: rgb(160, 200, 255); 
+}
+
+.theme--contrast .t-title { 
+  color: rgb(255, 255, 255); 
+}
+
+.theme--contrast .t-body { 
+  color: rgb(245, 240, 252); 
+}

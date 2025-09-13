@@ -1,0 +1,83 @@
+/* MapUI.uss
+ *
+ * Styles for the runtime world map.  The map is rendered as a grid of
+ * VisualElements (tiles) with optional labels.  A tile can be marked
+ * "active" to highlight the player's current position, or "invalid" if
+ * it does not represent a valid location.  Additional styles can be
+ * layered on via class lists to represent points of interest (shops,
+ * hazards, etc.).
+ */
+
+@import url("project://database/Assets/Project/Art/UI/USS/Portraits.uss");
+
+.map-root {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    flex-grow: 1;
+    /* Give the map panel a semi‑transparent background to stand out from the game UI */
+    background-color: rgba(15, 12, 25, 0.9);
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: #6b5b95;
+    border-style: solid;
+}
+
+.map-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e1d9ff;
+    margin-bottom: 6px;
+}
+
+.map-grid {
+    /* The map grid is built at runtime by the controller script.  It should
+     * expand to fit its children while staying centered within the root. */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-tile {
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    border-radius: 4px;
+    background-color: #1f1636;
+    border-color: #6b5b95;
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #dcd6f5;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.map-tile.active {
+    background-color: #5d3c99;
+    color: #ffffff;
+}
+
+.map-tile.invalid {
+    background-color: #362b55;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.map-description {
+    margin-top: 8px;
+    color: #c8c0e0;
+    font-size: 14px;
+    text-align: center;
+    max-width: 280px;
+}

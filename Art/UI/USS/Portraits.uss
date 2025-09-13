@@ -1,0 +1,31 @@
+/*
+ * Portraits.uss
+ *
+ * Additional styles to ensure that character and enemy portraits are displayed
+ * without stretching. Apply this stylesheet to any UIDocument that displays
+ * portraits to override the default sizing rules from other stylesheets.
+ */
+
+/* Character creation preview portrait */
+.cc-portrait {
+    /* Preserve aspect ratio for background images */
+    -unity-background-scale-mode: scale-to-fit;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Game HUD character portrait */
+.character-portrait {
+    -unity-background-scale-mode: scale-to-fit;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Combat UI portraits */
+.combat-portrait {
+    -unity-background-scale-mode: scale-to-fit;
+    background-position: center;
+    background-repeat: no-repeat;
+}
