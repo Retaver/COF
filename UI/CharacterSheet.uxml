@@ -1,0 +1,101 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Project/Art/UI/USS/CharacterSheet.uss" />
+    <ui:VisualElement name="character-sheet-modal" class="sheet-modal-overlay theme--twilight">
+        <ui:VisualElement name="character-sheet-container" class="sheet-container font--ui">
+            <ui:VisualElement name="sheet-header" class="sheet-header">
+                <ui:Label name="character-name" text="Character Name" class="sheet-title font--title" />
+                <ui:Label name="character-level" text="Level 1" class="sheet-subtitle" />
+            </ui:VisualElement>
+            <ui:VisualElement name="sheet-content" class="sheet-content">
+                <ui:VisualElement name="sheet-tabs" class="sheet-tabs">
+                    <ui:Button name="stats-tab" text="Attributes" class="sheet-tab active" />
+                    <ui:Button name="skills-tab" text="Skills" class="sheet-tab" />
+                    <ui:Button name="perks-tab" text="Perks" class="sheet-tab" />
+                    <ui:Button name="effects-tab" text="Effects" class="sheet-tab" />
+                </ui:VisualElement>
+                <ui:VisualElement name="stats-panel" class="sheet-panel">
+                    <ui:VisualElement name="core-stats" class="stats-section">
+                        <ui:Label text="Core Attributes" class="section-title" />
+                        <ui:VisualElement name="core-stats-grid" class="stats-grid" style="flex-direction: row; align-items: flex-start; justify-content: center;">
+                            <ui:VisualElement name="strength-card" class="stat-card">
+                                <ui:Label text="Strength" class="stat-name" />
+                                <ui:Label text="6" class="stat-value" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="dexterity-card" class="stat-card">
+                                <ui:Label text="Dexterity" class="stat-name" />
+                                <ui:Label text="7" class="stat-value" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="constitution-card" class="stat-card">
+                                <ui:Label text="Constitution" class="stat-name" />
+                                <ui:Label text="5" class="stat-value" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="intelligence-card" class="stat-card">
+                                <ui:Label text="Intelligence" class="stat-name" />
+                                <ui:Label text="8" class="stat-value" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="wisdom-card" class="stat-card">
+                                <ui:Label text="Wisdom" class="stat-name" />
+                                <ui:Label text="5" class="stat-value" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="charisma-card" class="stat-card">
+                                <ui:Label text="Charisma" class="stat-name" />
+                                <ui:Label text="4" class="stat-value" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="skills-panel" class="sheet-panel" style="display: none;">
+                    <ui:VisualElement name="skill-header" class="skill-header">
+                        <ui:Label name="skill-points-label" text="Skill Points: 5" class="skill-points-label" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="skill-tree-container" class="skill-tree-container">
+                        <ui:VisualElement name="combat-skills" class="skill-category">
+                            <ui:Label text="Combat Skills" class="skill-category-header" />
+                            <ui:VisualElement name="combat-skills-container" class="skills-container">
+                                <ui:VisualElement name="sword-skill" class="skill-entry">
+                                    <ui:Button name="sword-skill-button" class="skill-button skill-available">
+                                        <ui:VisualElement class="skill-info">
+                                            <ui:Label text="Basic Swordplay" class="skill-name" />
+                                            <ui:Label text="Improves melee weapon accuracy and damage" class="skill-description" />
+                                            <ui:Label text="Cost: 1 point | Requires: None" class="skill-details" />
+                                        </ui:VisualElement>
+                                    </ui:Button>
+                                </ui:VisualElement>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="magic-skills" class="skill-category">
+                            <ui:Label text="Magic Skills" class="skill-category-header" />
+                            <ui:VisualElement name="magic-skills-container" class="skills-container">
+                                <ui:VisualElement name="fire-magic-skill" class="skill-entry">
+                                    <ui:Button name="fire-magic-skill-button" class="skill-button skill-locked">
+                                        <ui:VisualElement class="skill-info">
+                                            <ui:Label text="Fire Magic I" class="skill-name" />
+                                            <ui:Label text="Unlocks basic fire spells" class="skill-description" />
+                                            <ui:Label text="Cost: 2 points | Requires: Intelligence 6" class="skill-details" />
+                                        </ui:VisualElement>
+                                    </ui:Button>
+                                </ui:VisualElement>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="perks-panel" class="sheet-panel" style="display: none;">
+                    <ui:VisualElement name="perks-grid" class="perks-grid">
+                        <ui:VisualElement name="sample-perk" class="perk-card">
+                            <ui:Label text="Arcane Scavenger" class="perk-name" />
+                            <ui:Label text="Finds magic items in ruins more frequently" class="perk-description" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="effects-panel" class="sheet-panel" style="display: none;">
+                    <ui:VisualElement name="effects-grid" class="effects-grid">
+                        <ui:Label text="No active effects." class="effects-empty" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="sheet-footer" class="sheet-footer">
+                <ui:Button name="close-button" text="Close" class="sheet-button primary" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

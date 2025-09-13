@@ -1,0 +1,647 @@
+/* Font hooks (drop fonts in Assets/Resources/Fonts/) */
+.font--title { -unity-font: resource("Fonts/MLPTitle"); }
+.font--ui    { -unity-font: resource("Fonts/UIFont"); }
+
+/* Modal overlay - covers full screen but centers content */
+.sheet-modal-overlay {
+    position: absolute;
+    left: 0; 
+    top: 0; 
+    right: 0; 
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main container - centered, fixed size */
+.sheet-container {
+    width: 800px;
+    max-width: 90%;
+    height: 600px;
+    max-height: 90%;
+    flex-direction: column;
+    background-color: rgb(28, 24, 32);
+    color: rgb(232, 226, 240);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgb(84, 66, 112);
+    overflow: hidden;
+}
+
+.sheet-header {
+    flex-direction: column;
+    background-color: rgb(40, 36, 48);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(84, 66, 112);
+    padding: 12px 16px;
+    flex-shrink: 0;
+}
+
+.sheet-title {
+    font-size: 22px;
+    -unity-font-style: bold;
+    color: rgb(238, 232, 244);
+    margin-bottom: 4px;
+    -unity-text-align: middle-center;
+}
+
+.sheet-subtitle {
+    font-size: 13px;
+    color: rgb(196, 186, 210);
+    -unity-text-align: middle-center;
+}
+
+.sheet-content {
+    flex-grow: 1;
+    flex-direction: column;
+    background-color: rgb(34, 30, 40);
+    min-height: 0;
+}
+
+/* Tabs */
+.sheet-tabs {
+    flex-direction: row;
+    padding: 8px;
+    background-color: rgb(36, 30, 46);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(84, 66, 112);
+    flex-shrink: 0;
+}
+
+.sheet-tab {
+    min-width: 110px;
+    margin-right: 6px;
+    padding: 8px 12px;
+    background-color: rgb(44, 36, 56);
+    border-width: 1px;
+    border-color: rgb(110, 90, 146);
+    border-radius: 6px;
+    color: rgb(232, 226, 240);
+    -unity-text-align: middle-center;
+    font-size: 13px;
+}
+
+.sheet-tab:hover {
+    background-color: rgb(56, 46, 74);
+    border-color: rgb(140, 118, 178);
+}
+
+.sheet-tab.active {
+    background-color: rgb(76, 60, 120);
+    border-color: rgb(160, 138, 200);
+    color: rgb(248, 244, 255);
+}
+
+/* Panels */
+.sheet-panel {
+    flex-grow: 1;
+    padding: 12px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Sections */
+.stats-section {
+    margin-bottom: 12px;
+    padding: 10px;
+    background-color: rgb(38, 34, 44);
+    border-width: 1px;
+    border-color: rgb(84, 66, 112);
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.section-title {
+    font-size: 14px;
+    -unity-font-style: bold;
+    color: rgb(206, 198, 218);
+    margin-bottom: 8px;
+    background-color: rgba(84, 66, 112, 0.35);
+    padding: 4px 8px;
+    border-radius: 4px;
+    -unity-text-align: middle-center;
+}
+
+/* Stats grids */
+.stats-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.stat-card {
+    width: 120px;
+    min-height: 60px;
+    background-color: rgba(84, 66, 112, 0.28);
+    border-width: 1px;
+    border-color: rgb(110, 90, 146);
+    border-radius: 6px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 4px;
+}
+
+.stat-card:hover {
+    background-color: rgba(84, 66, 112, 0.4);
+    border-color: rgb(140, 118, 178);
+}
+
+.stat-name {
+    font-size: 12px;
+    -unity-font-style: bold;
+    color: rgb(206, 198, 218);
+    margin-bottom: 4px;
+    -unity-text-align: middle-center;
+}
+
+.stat-value {
+    font-size: 16px;
+    -unity-font-style: bold;
+    color: rgb(238, 232, 244);
+    -unity-text-align: middle-center;
+}
+
+/* Skills, Perks, Effects grids */
+.skills-grid,
+.perks-grid,
+.effects-grid {
+    flex-direction: column;
+}
+
+.skill-card,
+.perk-card,
+.effect-card {
+    padding: 8px;
+    background-color: rgba(84, 66, 112, 0.28);
+    border-width: 1px;
+    border-color: rgb(110, 90, 146);
+    border-radius: 6px;
+    min-height: 40px;
+    flex-direction: column;
+    margin-bottom: 6px;
+}
+
+.skill-name,
+.perk-name,
+.effect-name {
+    font-size: 13px;
+    -unity-font-style: bold;
+    color: rgb(238, 232, 244);
+    margin-bottom: 2px;
+}
+
+.skill-description,
+.perk-description,
+.effect-description {
+    font-size: 11px;
+    color: rgb(196, 186, 210);
+    white-space: normal;
+}
+
+/* Skill Tree Styles */
+.skill-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(84, 66, 112);
+    margin-bottom: 10px;
+    background-color: rgb(40, 36, 48);
+    border-radius: 6px;
+}
+
+.skill-points-label {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: rgb(255, 215, 0);
+}
+
+.skill-tree-container {
+    flex-grow: 1;
+    padding: 10px;
+    min-height: 0;
+}
+
+.skill-category {
+    margin-bottom: 20px;
+    border-width: 1px;
+    border-color: rgb(84, 66, 112);
+    border-radius: 6px;
+    padding: 10px;
+    background-color: rgba(28, 24, 32, 0.8);
+}
+
+.skill-category-header {
+    font-size: 16px;
+    -unity-font-style: bold;
+    color: rgb(255, 165, 0);
+    margin-bottom: 10px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(84, 66, 112);
+    padding-bottom: 5px;
+}
+
+.skills-container {
+    flex-direction: column;
+}
+
+.skill-entry {
+    margin-bottom: 5px;
+}
+
+.skill-button {
+    padding: 8px;
+    margin: 2px;
+    border-radius: 4px;
+    background-color: rgba(44, 36, 56, 0.8);
+    border-width: 1px;
+    border-color: rgb(84, 66, 112);
+    width: 100%;
+}
+
+.skill-button:hover {
+    background-color: rgba(56, 46, 74, 0.9);
+    border-color: rgb(140, 118, 178);
+}
+
+.skill-button.skill-available {
+    border-color: rgb(0, 255, 0);
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+.skill-button.skill-available:hover {
+    background-color: rgba(0, 255, 0, 0.4);
+}
+
+.skill-button.skill-learned {
+    border-color: rgb(255, 215, 0);
+    background-color: rgba(255, 215, 0, 0.2);
+}
+
+.skill-button.skill-locked {
+    border-color: rgb(255, 0, 0);
+    background-color: rgba(255, 0, 0, 0.1);
+    opacity: 0.6;
+}
+
+.skill-button.skill-maxed {
+    border-color: rgb(147, 112, 219);
+    background-color: rgba(147, 112, 219, 0.3);
+}
+
+.skill-button.skill-unavailable {
+    opacity: 0.3;
+}
+
+.skill-info {
+    flex-direction: column;
+}
+
+.skill-details {
+    font-size: 10px;
+    color: rgb(170, 170, 170);
+    white-space: normal;
+}
+
+/* Footer */
+.sheet-footer {
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px 16px;
+    background-color: rgb(36, 30, 46);
+    border-top-width: 1px;
+    border-top-color: rgb(84, 66, 112);
+    flex-shrink: 0;
+}
+
+.sheet-button {
+    min-width: 120px;
+    padding: 8px 14px;
+    background-color: rgb(44, 36, 56);
+    border-width: 1px;
+    border-color: rgb(110, 90, 146);
+    border-radius: 6px;
+    color: rgb(232, 226, 240);
+    font-size: 13px;
+}
+
+.sheet-button:hover {
+    background-color: rgb(56, 46, 74);
+    border-color: rgb(140, 118, 178);
+}
+
+.sheet-button.primary {
+    background-color: rgb(76, 60, 120);
+    border-color: rgb(160, 138, 200);
+    color: rgb(248, 244, 255);
+}
+
+/* Scroll areas */
+.skills-scroll,
+.perks-scroll,
+.effects-scroll {
+    flex-grow: 1;
+    min-height: 0;
+    padding: 6px;
+}
+
+/* TWILIGHT THEME */
+.theme--twilight .sheet-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.theme--twilight .sheet-container { 
+    background-color: rgb(28, 24, 32); 
+    color: rgb(232, 226, 240);
+    border-color: rgb(84, 66, 112);
+}
+
+.theme--twilight .sheet-header { 
+    background-color: rgb(40, 36, 48); 
+    border-bottom-color: rgb(84, 66, 112); 
+}
+
+.theme--twilight .sheet-title { 
+    color: rgb(238, 232, 244); 
+}
+
+.theme--twilight .sheet-subtitle { 
+    color: rgb(196, 186, 210); 
+}
+
+.theme--twilight .sheet-content { 
+    background-color: rgb(34, 30, 40); 
+}
+
+.theme--twilight .sheet-tabs { 
+    background-color: rgb(36, 30, 46); 
+    border-bottom-color: rgb(84, 66, 112); 
+}
+
+.theme--twilight .sheet-tab { 
+    background-color: rgb(44, 36, 56); 
+    border-color: rgb(110, 90, 146); 
+    color: rgb(232, 226, 240); 
+}
+
+.theme--twilight .sheet-tab:hover { 
+    background-color: rgb(56, 46, 74); 
+    border-color: rgb(140, 118, 178); 
+}
+
+.theme--twilight .sheet-tab.active { 
+    background-color: rgb(76, 60, 120); 
+    border-color: rgb(160, 138, 200); 
+    color: rgb(248, 244, 255); 
+}
+
+.theme--twilight .stats-section { 
+    background-color: rgb(38, 34, 44); 
+    border-color: rgb(84, 66, 112); 
+}
+
+.theme--twilight .section-title { 
+    background-color: rgba(84, 66, 112, 0.35); 
+    color: rgb(206, 198, 218); 
+}
+
+.theme--twilight .stat-card { 
+    background-color: rgba(84, 66, 112, 0.28); 
+    border-color: rgb(110, 90, 146); 
+}
+
+.theme--twilight .stat-card:hover {
+    background-color: rgba(84, 66, 112, 0.4);
+    border-color: rgb(140, 118, 178);
+}
+
+.theme--twilight .stat-name {
+    color: rgb(206, 198, 218);
+}
+
+.theme--twilight .stat-value {
+    color: rgb(238, 232, 244);
+}
+
+.theme--twilight .skill-card,
+.theme--twilight .perk-card,
+.theme--twilight .effect-card { 
+    background-color: rgba(84, 66, 112, 0.28); 
+    border-color: rgb(110, 90, 146); 
+}
+
+.theme--twilight .skill-name,
+.theme--twilight .perk-name,
+.theme--twilight .effect-name {
+    color: rgb(238, 232, 244);
+}
+
+.theme--twilight .skill-description,
+.theme--twilight .perk-description,
+.theme--twilight .effect-description {
+    color: rgb(196, 186, 210);
+}
+
+.theme--twilight .skill-header {
+    background-color: rgb(40, 36, 48);
+    border-bottom-color: rgb(84, 66, 112);
+}
+
+.theme--twilight .skill-points-label {
+    color: rgb(255, 215, 0);
+}
+
+.theme--twilight .skill-category {
+    background-color: rgba(28, 24, 32, 0.8);
+    border-color: rgb(84, 66, 112);
+}
+
+.theme--twilight .skill-category-header {
+    color: rgb(255, 165, 0);
+    border-bottom-color: rgb(84, 66, 112);
+}
+
+.theme--twilight .skill-button {
+    background-color: rgba(44, 36, 56, 0.8);
+    border-color: rgb(84, 66, 112);
+}
+
+.theme--twilight .skill-button:hover {
+    background-color: rgba(56, 46, 74, 0.9);
+    border-color: rgb(140, 118, 178);
+}
+
+.theme--twilight .sheet-footer {
+    background-color: rgb(36, 30, 46);
+    border-top-color: rgb(84, 66, 112);
+}
+
+.theme--twilight .sheet-button { 
+    background-color: rgb(44, 36, 56); 
+    border-color: rgb(110, 90, 146); 
+    color: rgb(232, 226, 240); 
+}
+
+.theme--twilight .sheet-button:hover { 
+    background-color: rgb(56, 46, 74); 
+    border-color: rgb(140, 118, 178); 
+}
+
+.theme--twilight .sheet-button.primary { 
+    background-color: rgb(76, 60, 120); 
+    border-color: rgb(160, 138, 200); 
+    color: rgb(248, 244, 255); 
+}
+
+/* AURIC THEME */
+.theme--auric .sheet-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.theme--auric .sheet-container { 
+    background-color: rgb(30, 25, 20); 
+    color: rgb(200, 190, 180);
+    border-color: rgb(85, 75, 65);
+}
+
+.theme--auric .sheet-header { 
+    background-color: rgb(45, 40, 35); 
+    border-bottom-color: rgb(85, 75, 65); 
+}
+
+.theme--auric .sheet-title { 
+    color: rgb(230, 220, 210); 
+}
+
+.theme--auric .sheet-subtitle { 
+    color: rgb(186, 176, 166); 
+}
+
+.theme--auric .sheet-content { 
+    background-color: rgb(38, 32, 26); 
+}
+
+.theme--auric .sheet-tabs { 
+    background-color: rgb(42, 36, 30); 
+    border-bottom-color: rgb(85, 75, 65); 
+}
+
+.theme--auric .sheet-tab { 
+    background-color: rgb(52, 44, 36); 
+    border-color: rgb(110, 96, 80); 
+    color: rgb(200, 190, 180); 
+}
+
+.theme--auric .sheet-tab:hover { 
+    background-color: rgb(62, 54, 46); 
+    border-color: rgb(150, 128, 90); 
+}
+
+.theme--auric .sheet-tab.active { 
+    background-color: rgb(120, 96, 60); 
+    border-color: rgb(180, 150, 96); 
+    color: rgb(240, 232, 220); 
+}
+
+.theme--auric .stats-section { 
+    background-color: rgb(44, 38, 32); 
+    border-color: rgb(85, 75, 65); 
+}
+
+.theme--auric .section-title { 
+    background-color: rgba(110, 96, 80, 0.35); 
+    color: rgb(190, 180, 168); 
+}
+
+.theme--auric .stat-card { 
+    background-color: rgba(110, 96, 80, 0.28); 
+    border-color: rgb(130, 116, 94); 
+}
+
+.theme--auric .stat-card:hover {
+    background-color: rgba(110, 96, 80, 0.4);
+    border-color: rgb(150, 128, 90);
+}
+
+.theme--auric .stat-name {
+    color: rgb(190, 180, 168);
+}
+
+.theme--auric .stat-value {
+    color: rgb(230, 220, 210);
+}
+
+.theme--auric .skill-card,
+.theme--auric .perk-card,
+.theme--auric .effect-card { 
+    background-color: rgba(110, 96, 80, 0.28); 
+    border-color: rgb(130, 116, 94); 
+}
+
+.theme--auric .skill-name,
+.theme--auric .perk-name,
+.theme--auric .effect-name {
+    color: rgb(230, 220, 210);
+}
+
+.theme--auric .skill-description,
+.theme--auric .perk-description,
+.theme--auric .effect-description {
+    color: rgb(186, 176, 166);
+}
+
+.theme--auric .skill-header {
+    background-color: rgb(45, 40, 35);
+    border-bottom-color: rgb(85, 75, 65);
+}
+
+.theme--auric .skill-points-label {
+    color: rgb(255, 215, 0);
+}
+
+.theme--auric .skill-category {
+    background-color: rgba(30, 25, 20, 0.8);
+    border-color: rgb(85, 75, 65);
+}
+
+.theme--auric .skill-category-header {
+    color: rgb(255, 165, 0);
+    border-bottom-color: rgb(85, 75, 65);
+}
+
+.theme--auric .skill-button {
+    background-color: rgba(52, 44, 36, 0.8);
+    border-color: rgb(85, 75, 65);
+}
+
+.theme--auric .skill-button:hover {
+    background-color: rgba(62, 54, 46, 0.9);
+    border-color: rgb(150, 128, 90);
+}
+
+.theme--auric .sheet-footer {
+    background-color: rgb(42, 36, 30);
+    border-top-color: rgb(85, 75, 65);
+}
+
+.theme--auric .sheet-button { 
+    background-color: rgb(52, 44, 36); 
+    border-color: rgb(110, 96, 80); 
+    color: rgb(200, 190, 180); 
+}
+
+.theme--auric .sheet-button:hover { 
+    background-color: rgb(62, 54, 46); 
+    border-color: rgb(150, 128, 90); 
+}
+
+.theme--auric .sheet-button.primary { 
+    background-color: rgb(120, 96, 60); 
+    border-color: rgb(180, 150, 96); 
+    color: rgb(240, 232, 220); 
+}
