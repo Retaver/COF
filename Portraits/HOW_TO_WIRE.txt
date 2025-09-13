@@ -1,0 +1,23 @@
+Drop-in wiring for Character Creation portraits & pause menu:
+
+1) Character Creation
+   - Add BOTH components to your Character Creation UIDocument GameObject:
+     • CharacterCreationPortraitBinder
+     • CharacterCreationAutoBinder
+   - Keep your existing race/gender controls. The AutoBinder will find them automatically.
+   - Place art under Resources/Portraits/<Race>/<Gender>/portrait.png (folder-first),
+     or name your sprites like "earthpony_female.png" anywhere under Resources/Portraits
+     (the binder will auto-detect by name).
+
+2) In-Game HUD (MLPGameUI)
+   - Ensure MLPGameUI is on the HUD UIDocument.
+   - Buttons supported out of the box:
+     • "CharacterButton" / class "character-button" / text contains "character"
+     • "MenuButton" / class "menu-button" / text contains "menu"
+     • "OptionsButton" / class "options-button" / text contains "option"
+
+3) Main Menu
+   - Add MainMenuPauseOptionsBinder to the Main Menu UIDocument.
+   - Clicking Options will:
+     • Show a PauseMenuController in the current scene (if present), OR
+     • Schedule the Pause Menu to auto-open after loading the next scene.
